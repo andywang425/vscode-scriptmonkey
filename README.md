@@ -1,6 +1,6 @@
 # Scriptmonkey
 
-A simple language support extension for userscript which provides syntax highlight, completion, hover, and code snippets.
+A simple userscript language support extension which provides syntax highlight, completion, hover, and code snippets.
 
 ## Features
 
@@ -31,3 +31,11 @@ A simple language support extension for userscript which provides syntax highlig
 ### 0.0.1
 
 Initial release of Scriptmonkey.
+
+## License
+
+![MIT](https://img.shields.io/github/license/andywang425/vscode-scriptmonkey?style=for-the-badge)
+
+## Special Thanks
+
+- [kufii](https://github.com/kufii): Scriptmonkey is inspired from [vscode-userscript](https://github.com/kufii/vscode-userscript).
