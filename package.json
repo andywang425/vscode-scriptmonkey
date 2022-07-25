@@ -1,8 +1,11 @@
 {
 	"name": "vscode-scriptmonkey",
-	"displayName": "ScriptMonkey",
+	"displayName": "Scriptmonkey",
 	"description": "UserScript language support for vscode",
+	"icon": "images/icon.png",
 	"version": "0.0.1",
+	"repository": "https://github.com/andywang425/vscode-scriptmonkey",
+	"publisher": "andywang",
 	"engines": {
 		"vscode": "^1.69.0"
 	},
@@ -16,30 +19,16 @@
 		"Violentmonkey"
 	],
 	"activationEvents": [
-		"onCommand:vscode-scriptmonkey.helloWorld",
 		"onLanguage:javascript"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"commands": [
-			{
-				"command": "vscode-scriptmonkey.helloWorld",
-				"title": "Hello World"
-			}
-		],
 		"grammars": [
 			{
 				"scopeName": "text.userjs",
 				"path": "./syntaxes/userjs.tmLanguage.json",
 				"injectTo": [
-					"source.js",
-					"source.mjs",
-					"source.ts",
-					"source.jsx",
-					"source.tsx",
-					"source.ts",
-					"source.tsc",
-					"source.tsx"
+					"source.js"
 				]
 			}
 		],
