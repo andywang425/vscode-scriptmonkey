@@ -1,0 +1,257 @@
+{
+    "$schema": "./tmlanguage.json",
+    "scopeName": "text.userjs",
+    "fileTypes": [
+        "user.js"
+    ],
+    "injectionSelector": "L:source.js -comment -(string -meta.embedded), L:source.jsx -comment -(string -meta.embedded),  L:source.js.jsx -comment -(string -meta.embedded), L:source.ts -comment -(string -meta.embedded), L:source.tsx -comment -(string -meta.embedded)",
+    "patterns": [
+        {
+            "begin": "//\\s*==UserScript==",
+            "beginCaptures": {
+                "0": {
+                    "name": "comment.block.documentation.js"
+                }
+            },
+            "end": "//\\s*==/UserScript==",
+            "endCaptures": {
+                "0": {
+                    "name": "comment.block.documentation.js"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#userscript-header"
+                }
+            ]
+        }
+    ],
+    "repository": {
+        "userscript-header": {
+            "patterns": [
+                {
+                    "match": "^//\\s*(@)(name(?::[a-zA-Z]+(?:-[a-zA-Z]+)?)?|author|description(?::[a-zA-Z]+(?:-[a-zA-Z]+)?)?|nocompat|license|copyright|compatible)\\s+(.*)",
+                    "captures": {
+                        "0": {
+                            "name": "comment.block.documentation.js"
+                        },
+                        "1": {
+                            "name": "storage.type.class.jsdoc"
+                        },
+                        "2": {
+                            "name": "storage.type.class.jsdoc"
+                        },
+                        "3": {
+                            "name": "entity.name.type.jsdoc"
+                        }
+                    }
+                },
+                {
+                    "match": "^//\\s*(@grant)\\s+(.*)",
+                    "captures": {
+                        "0": {
+                            "name": "comment.block.documentation.js"
+                        },
+                        "1": {
+                            "name": "storage.type.class.jsdoc"
+                        },
+                        "2": {
+                            "name": "variable.other.jsdoc",
+                            "patterns": [
+                                {
+                                    "match": "\\b(?:none|unsafeWindow|window\\.close|window\\.focus|window\\.onurlchange|GM[_\\.]addStyle|GM[_\\.]addElement|GM[_\\.]deleteValue|GM[_\\.]listValues|GM_addValueChangeListener|GM_removeValueChangeListener|GM[_\\.]setValue|GM[_\\.]getValue|GM_log|GM_getResourceText|GM_getResourceURL|GM\\.getResourceUrl|GM[_\\.]registerMenuCommand|GM_unregisterMenuCommand|GM[_\\.]openInTab|GM_xmlhttpRequest|GM\\.xmlHttpRequest|GM_download|GM_getTab|GM_saveTab|GM_getTabs|GM_notification|GM[_\\.]setClipboard|GM[_\\.]info)\\s*$",
+                                    "name": "constant.language.symbol-type.jsdoc"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "match": "^//\\s*(@run-at)\\s+(.*)",
+                    "captures": {
+                        "0": {
+                            "name": "comment.block.documentation.js"
+                        },
+                        "1": {
+                            "name": "storage.type.class.jsdoc"
+                        },
+                        "2": {
+                            "name": "comment.block.documentation.js",
+                            "patterns": [
+                                {
+                                    "match": "\\b(?:document-start|document-body|document-end|document-idle|context-menu)\\s*$",
+                                    "name": "constant.language.symbol-type.jsdoc"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "match": "^//\\s*(@inject-into)\\s+(.*)",
+                    "captures": {
+                        "0": {
+                            "name": "comment.block.documentation.js"
+                        },
+                        "1": {
+                            "name": "storage.type.class.jsdoc"
+                        },
+                        "2": {
+                            "name": "comment.block.documentation.js",
+                            "patterns": [
+                                {
+                                    "match": "\\b(?:page|content|auto)\\s*$",
+                                    "name": "constant.language.symbol-type.jsdoc"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "match": "^//\\s*(@(?:namespace|homepage|homepageURL|website|source|icon|iconURL|defaulticon|icon64|icon64URL|updateURL|downloadURL|supportURL|require|connect))\\s+(.*)",
+                    "captures": {
+                        "0": {
+                            "name": "comment.block.documentation.js"
+                        },
+                        "1": {
+                            "name": "storage.type.class.jsdoc"
+                        },
+                        "2": {
+                            "name": "variable.other.link.jsdoc"
+                        }
+                    }
+                },
+                {
+                    "match": "^//\\s*(@version)\\s+(.*)",
+                    "captures": {
+                        "0": {
+                            "name": "comment.block.documentation.js"
+                        },
+                        "1": {
+                            "name": "storage.type.class.jsdoc"
+                        },
+                        "2": {
+                            "name": "comment.block.documentation.js",
+                            "patterns": [
+                                {
+                                    "match": "\\b\\d+[a-zA-Z]?(\\.\\d+[a-zA-Z]?)*\\s*$",
+                                    "name": "constant.numeric.jsdoc"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "match": "^//\\s*(@(?:include|exclude))\\s+(.*)",
+                    "captures": {
+                        "0": {
+                            "name": "comment.block.documentation.js"
+                        },
+                        "1": {
+                            "name": "storage.type.class.jsdoc"
+                        },
+                        "2": {
+                            "name": "variable.other.jsdoc",
+                            "patterns": [
+                                {
+                                    "include": "source.js#regexp"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "match": "^//\\s*(@match)\\s+(.*)",
+                    "captures": {
+                        "0": {
+                            "name": "comment.block.documentation.js"
+                        },
+                        "1": {
+                            "name": "storage.type.class.jsdoc"
+                        },
+                        "2": {
+                            "name": "variable.other.jsdoc",
+                            "patterns": [
+                                {
+                                    "include": "source.js#regexp"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "match": "^//\\s*(@resource)\\s*(\\S*)\\s*(.*)",
+                    "captures": {
+                        "0": {
+                            "name": "comment.block.documentation.js"
+                        },
+                        "1": {
+                            "name": "storage.type.class.jsdoc"
+                        },
+                        "2": {
+                            "name": "constant.language.symbol-type.jsdoc"
+                        },
+                        "3": {
+                            "name": "variable.other.link.underline.jsdoc"
+                        }
+                    }
+                },
+                {
+                    "match": "^//\\s*(@antifeature(?::[a-zA-Z]+(?:-[a-zA-Z]+)?)?)\\s*(\\S*)\\s*(.*)",
+                    "captures": {
+                        "0": {
+                            "name": "comment.block.documentation.js"
+                        },
+                        "1": {
+                            "name": "storage.type.class.jsdoc"
+                        },
+                        "2": {
+                            "name": "variable.other.jsdoc",
+                            "patterns": [
+                                {
+                                    "match": "\\b(?:ads|tracking|miner)\\b",
+                                    "name": "constant.language.symbol-type.jsdoc"
+                                }
+                            ]
+                        },
+                        "3": {
+                            "name": "entity.name.type.jsdoc"
+                        }
+                    }
+                },
+                {
+                    "match": "^//\\s*(@(?:noframes|unwrap))\\s*.*",
+                    "captures": {
+                        "0": {
+                            "name": "comment.block.documentation.js"
+                        },
+                        "1": {
+                            "name": "storage.type.class.jsdoc"
+                        }
+                    }
+                },
+                {
+                    "match": "^//\\s*(@.*?)\\s+(.*)$",
+                    "captures": {
+                        "0": {
+                            "name": "comment.block.documentation.js"
+                        },
+                        "1": {
+                            "name": "entity.name.type.instance.jsdoc"
+                        },
+                        "2": {
+
+                        }
+                    }
+                },
+                {
+                    "match": "^//.*",
+                    "captures": {
+                        "0": {
+                            "name": "comment.block.documentation.js"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
