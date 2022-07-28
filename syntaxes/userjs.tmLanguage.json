@@ -141,7 +141,7 @@
                     }
                 },
                 {
-                    "match": "^//\\s*(@(?:include|exclude))\\s+(.*)",
+                    "match": "^//\\s*(@(?:include|exclude(?:-match)?))\\s+(.*)",
                     "captures": {
                         "0": {
                             "name": "comment.block.documentation.js"

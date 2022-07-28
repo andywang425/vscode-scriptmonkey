@@ -3,7 +3,7 @@
 	"displayName": "Scriptmonkey",
 	"description": "UserScript language support for vscode",
 	"icon": "images/icon.png",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"repository": "https://github.com/andywang425/vscode-scriptmonkey",
 	"publisher": "andywang",
 	"engines": {
@@ -19,7 +19,8 @@
 		"Violentmonkey"
 	],
 	"activationEvents": [
-		"onLanguage:javascript"
+		"onLanguage:javascript",
+		"onLanguage:typescript"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -28,13 +29,18 @@
 				"scopeName": "text.userjs",
 				"path": "./syntaxes/userjs.tmLanguage.json",
 				"injectTo": [
-					"source.js"
+					"source.js",
+					"source.ts"
 				]
 			}
 		],
 		"snippets": [
 			{
 				"language": "javascript",
+				"path": "./snippets/snippets.json"
+			},
+			{
+				"language": "typescript",
 				"path": "./snippets/snippets.json"
 			}
 		]

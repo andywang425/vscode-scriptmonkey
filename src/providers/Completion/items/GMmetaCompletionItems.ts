@@ -182,6 +182,26 @@ const GMmetaCompletionItems = [
         ]
     },
     {
+        label: '@exclude',
+        kind: vscode.CompletionItemKind.Snippet,
+        documentation: [
+            {
+                add: 'markdown',
+                value: 'Exclude URLs even it they are included by `@include` or `@match`.  \nMultiple tag instances are allowed.'
+            }
+        ]
+    },
+    {
+        label: '@exclude-match',
+        kind: vscode.CompletionItemKind.Snippet,
+        documentation: [
+            {
+                add: 'markdown',
+                value: 'Exclude URLs even it they are included by `@include` or `@match`.  \nMultiple tag instances are allowed.'
+            }
+        ]
+    },
+    {
         label: '@match',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
