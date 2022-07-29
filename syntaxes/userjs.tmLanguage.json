@@ -59,7 +59,7 @@
                             "name": "variable.other.jsdoc",
                             "patterns": [
                                 {
-                                    "match": "\\b(?:none|unsafeWindow|window\\.close|window\\.focus|window\\.onurlchange|GM[_\\.]addStyle|GM[_\\.]addElement|GM[_\\.]deleteValue|GM[_\\.]listValues|GM_addValueChangeListener|GM_removeValueChangeListener|GM[_\\.]setValue|GM[_\\.]getValue|GM_log|GM_getResourceText|GM_getResourceURL|GM\\.getResourceUrl|GM[_\\.]registerMenuCommand|GM_unregisterMenuCommand|GM[_\\.]openInTab|GM_xmlhttpRequest|GM\\.xmlHttpRequest|GM_download|GM_getTab|GM_saveTab|GM_getTabs|GM_notification|GM[_\\.]setClipboard|GM[_\\.]info)\\s*$",
+                                    "match": "\\b(?:none|unsafeWindow|window\\.close|window\\.focus|window\\.onurlchange|GM[_\\.]addStyle|GM[_\\.]addElement|GM[_\\.]deleteValue|GM[_\\.]listValues|GM_addValueChangeListener|GM_removeValueChangeListener|GM[_\\.]setValue|GM[_\\.]getValue|GM_log|GM_getResourceText|GM_getResourceURL|GM\\.getResourceUrl|GM[_\\.]registerMenuCommand|GM_unregisterMenuCommand|GM[_\\.]openInTab|GM_xmlhttpRequest|GM\\.xmlHttpRequest|GM_download|GM_getTab|GM_saveTab|GM_getTabs|GM[_\\.]notification|GM[_\\.]setClipboard|GM[_\\.]info)\\s*$",
                                     "name": "constant.language.symbol-type.jsdoc"
                                 }
                             ]
