@@ -107,7 +107,7 @@
                     }
                 },
                 {
-                    "match": "^//\\s*(@(?:namespace|homepage|homepageURL|website|source|icon|iconURL|defaulticon|icon64|icon64URL|updateURL|downloadURL|supportURL|require|connect))\\s+(.*)",
+                    "match": "^//\\s*(@(?:namespace|homepage|homepageURL|website|source|icon|iconURL|defaulticon|icon64|icon64URL|updateURL|downloadURL|supportURL|require))\\s+(.*)",
                     "captures": {
                         "0": {
                             "name": "comment.block.documentation.js"
@@ -141,26 +141,7 @@
                     }
                 },
                 {
-                    "match": "^//\\s*(@(?:include|exclude(?:-match)?))\\s+(.*)",
-                    "captures": {
-                        "0": {
-                            "name": "comment.block.documentation.js"
-                        },
-                        "1": {
-                            "name": "storage.type.class.jsdoc"
-                        },
-                        "2": {
-                            "name": "variable.other.jsdoc",
-                            "patterns": [
-                                {
-                                    "include": "source.js#regexp"
-                                }
-                            ]
-                        }
-                    }
-                },
-                {
-                    "match": "^//\\s*(@match)\\s+(.*)",
+                    "match": "^//\\s*(@(?:include|exclude(?:-match)?|connect|match))\\s+(.*)",
                     "captures": {
                         "0": {
                             "name": "comment.block.documentation.js"

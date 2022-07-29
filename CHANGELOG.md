@@ -6,6 +6,7 @@
 
 ### Added
 
+- `*` in `@connect` tag will be highlighted.
 - Support metadata completion `@exclude`, `@exclude-match`.
 
 ## [0.0.1] - 2022-07-25

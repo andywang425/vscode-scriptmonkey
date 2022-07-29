@@ -28,9 +28,7 @@ A simple userscript language support extension which provides syntax highlight, 
 
 ## Release Notes
 
-### 0.0.1
-
-Initial release of Scriptmonkey.
+Please check [CHANGELOG](CHANGELOG.md).
 
 ## License
 
