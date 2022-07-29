@@ -38,4 +38,4 @@ Initial release of Scriptmonkey.
 
 ## Special Thanks
 
-- [kufii](https://github.com/kufii): Scriptmonkey is inspired from [vscode-userscript](https://github.com/kufii/vscode-userscript).
+- [kufii](https://github.com/kufii): The metadata highlight feature of Scriptmonkey is improved from [vscode-userscript](https://github.com/kufii/vscode-userscript).
