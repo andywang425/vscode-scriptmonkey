@@ -8,6 +8,7 @@
 
 - Support highlight `GM.notification`.
 - Support metadata completion `@exclude`, `@exclude-match`.
+- Support metadata `@installURL`, `@contributionURL`, `@contributionAmount`, `@compatible`, `@incompatible`.
 
 ### Changed
 

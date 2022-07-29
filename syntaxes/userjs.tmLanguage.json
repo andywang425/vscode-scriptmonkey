@@ -30,7 +30,7 @@
         "userscript-header": {
             "patterns": [
                 {
-                    "match": "^//\\s*(@)(name(?::[a-zA-Z]+(?:-[a-zA-Z]+)?)?|author|description(?::[a-zA-Z]+(?:-[a-zA-Z]+)?)?|nocompat|license|copyright|compatible)\\s+(.*)",
+                    "match": "^//\\s*(@)(name(?::[a-zA-Z]+(?:-[a-zA-Z]+)?)?|author|description(?::[a-zA-Z]+(?:-[a-zA-Z]+)?)?|nocompat|license|copyright)\\s+(.*)",
                     "captures": {
                         "0": {
                             "name": "comment.block.documentation.js"
@@ -107,7 +107,7 @@
                     }
                 },
                 {
-                    "match": "^//\\s*(@(?:namespace|homepage|homepageURL|website|source|icon|iconURL|defaulticon|icon64|icon64URL|updateURL|downloadURL|supportURL|require))\\s+(.*)",
+                    "match": "^//\\s*(@(?:namespace|homepage|homepageURL|website|source|icon|iconURL|defaulticon|icon64|icon64URL|updateURL|downloadURL|supportURL|installURL|contributionURL|require))\\s+(.*)",
                     "captures": {
                         "0": {
                             "name": "comment.block.documentation.js"
@@ -137,6 +137,20 @@
                                     "name": "constant.numeric.jsdoc"
                                 }
                             ]
+                        }
+                    }
+                },
+                {
+                    "match": "^//\\s*(@contributionAmount)\\s+(.*)",
+                    "captures": {
+                        "0": {
+                            "name": "comment.block.documentation.js"
+                        },
+                        "1": {
+                            "name": "storage.type.class.jsdoc"
+                        },
+                        "2": {
+                            "name": "constant.numeric.jsdoc"
                         }
                     }
                 },
@@ -173,6 +187,23 @@
                         },
                         "3": {
                             "name": "variable.other.link.underline.jsdoc"
+                        }
+                    }
+                },
+                {
+                    "match": "^//\\s*(@(?:in)?compatible)\\s*(\\S*)\\s*(.*)",
+                    "captures": {
+                        "0": {
+                            "name": "comment.block.documentation.js"
+                        },
+                        "1": {
+                            "name": "storage.type.class.jsdoc"
+                        },
+                        "2": {
+                            "name": "constant.language.symbol-type.jsdoc"
+                        },
+                        "3": {
+                            "name": "entity.name.type.jsdoc"
                         }
                     }
                 },
@@ -219,8 +250,14 @@
                         "1": {
                             "name": "entity.name.type.instance.jsdoc"
                         },
-                        "2": {
-
+                        "2": {}
+                    }
+                },
+                {
+                    "match": "^//.*",
+                    "captures": {
+                        "0": {
+                            "name": "comment.block.documentation.js"
                         }
                     }
                 }
