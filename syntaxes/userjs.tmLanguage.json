@@ -242,14 +242,6 @@
 
                         }
                     }
-                },
-                {
-                    "match": "^//.*",
-                    "captures": {
-                        "0": {
-                            "name": "comment.block.documentation.js"
-                        }
-                    }
                 }
             ]
         }

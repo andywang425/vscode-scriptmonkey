@@ -19,8 +19,7 @@
 		"Violentmonkey"
 	],
 	"activationEvents": [
-		"onLanguage:javascript",
-		"onLanguage:typescript"
+		"onLanguage:javascript"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -29,18 +28,13 @@
 				"scopeName": "text.userjs",
 				"path": "./syntaxes/userjs.tmLanguage.json",
 				"injectTo": [
-					"source.js",
-					"source.ts"
+					"source.js"
 				]
 			}
 		],
 		"snippets": [
 			{
 				"language": "javascript",
-				"path": "./snippets/snippets.json"
-			},
-			{
-				"language": "typescript",
 				"path": "./snippets/snippets.json"
 			}
 		]
