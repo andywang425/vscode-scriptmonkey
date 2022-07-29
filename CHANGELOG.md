@@ -7,8 +7,11 @@
 ### Added
 
 - Support highlight `GM.notification`.
-- `*` in `@connect` tag will be highlighted.
 - Support metadata completion `@exclude`, `@exclude-match`.
+
+### Changed
+
+- `*` in `@connect` tag will be highlighted.
 
 ## [0.0.1] - 2022-07-25
 
