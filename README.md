@@ -28,9 +28,7 @@ A simple userscript language support extension which provides syntax highlight, 
 
 ## Release Notes
 
-### 0.0.1
-
-Initial release of Scriptmonkey.
+Please check [CHANGELOG](CHANGELOG.md).
 
 ## License
 
@@ -38,4 +36,4 @@ Initial release of Scriptmonkey.
 
 ## Special Thanks
 
-- [kufii](https://github.com/kufii): Scriptmonkey is inspired from [vscode-userscript](https://github.com/kufii/vscode-userscript).
+- [kufii](https://github.com/kufii): The metadata highlight feature of Scriptmonkey is improved from [vscode-userscript](https://github.com/kufii/vscode-userscript).

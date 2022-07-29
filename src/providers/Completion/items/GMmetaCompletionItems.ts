@@ -162,6 +162,36 @@ const GMmetaCompletionItems = [
         ]
     },
     {
+        label: '@installURL',
+        kind: vscode.CompletionItemKind.Snippet,
+        documentation: [
+            {
+                add: 'markdown',
+                value: 'Describe how user script managers should get updates.'
+            }
+        ]
+    },
+    {
+        label: '@contributionURL',
+        kind: vscode.CompletionItemKind.Snippet,
+        documentation: [
+            {
+                add: 'markdown',
+                value: 'URL for a page where users can donate to the author of a script.'
+            }
+        ]
+    },
+    {
+        label: '@contributionAmount',
+        kind: vscode.CompletionItemKind.Snippet,
+        documentation: [
+            {
+                add: 'markdown',
+                value: 'Suggested donation amount, used in conjunction with `@contributionURL`.'
+            }
+        ]
+    },
+    {
         label: '@supportURL',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
@@ -172,12 +202,54 @@ const GMmetaCompletionItems = [
         ]
     },
     {
+        label: '@compatible',
+        kind: vscode.CompletionItemKind.Snippet,
+        documentation: [
+            {
+                add: 'markdown',
+                value: 'Flags this script as compatible with a browser. Compatibility information will be shown on a script\'s page. Comments on compatibility can be included in the format `@compatible firefox Must disable pop-up blocker`. Recognized browsers are: `firefox`, `chrome`, `opera`, `safari`, `edge`.'
+            }
+        ],
+        insertText: new vscode.SnippetString('@compatible ${1|firefox,chrome,opera,safari,edge|} ')
+    },
+    {
+        label: '@incompatible',
+        kind: vscode.CompletionItemKind.Snippet,
+        documentation: [
+            {
+                add: 'markdown',
+                value: 'Flags this script as incompatible with a browser. Compatibility information will be shown on a script\'s page. Optional comments on compatibility can be included in the format `@incompatible firefox Broken since Firefox 23`. Recognized browsers are: `firefox`, `chrome`, `opera`, `safari`, `edge`.'
+            }
+        ],
+        insertText: new vscode.SnippetString('@incompatible ${1|firefox,chrome,opera,safari,edge|} ')
+    },
+    {
         label: '@include',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
                 add: 'markdown',
                 value: 'The pages on that a script should run.  \nMultiple tag instances are allowed.'
+            }
+        ]
+    },
+    {
+        label: '@exclude',
+        kind: vscode.CompletionItemKind.Snippet,
+        documentation: [
+            {
+                add: 'markdown',
+                value: 'Exclude URLs even it they are included by `@include` or `@match`.  \nMultiple tag instances are allowed.'
+            }
+        ]
+    },
+    {
+        label: '@exclude-match',
+        kind: vscode.CompletionItemKind.Snippet,
+        documentation: [
+            {
+                add: 'markdown',
+                value: 'Exclude URLs even it they are included by `@include` or `@match`.  \nMultiple tag instances are allowed.'
             }
         ]
     },

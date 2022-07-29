@@ -30,7 +30,7 @@
         "userscript-header": {
             "patterns": [
                 {
-                    "match": "^//\\s*(@)(name(?::[a-zA-Z]+(?:-[a-zA-Z]+)?)?|author|description(?::[a-zA-Z]+(?:-[a-zA-Z]+)?)?|nocompat|license|copyright|compatible)\\s+(.*)",
+                    "match": "^//\\s*(@)(name(?::[a-zA-Z]+(?:-[a-zA-Z]+)?)?|author|description(?::[a-zA-Z]+(?:-[a-zA-Z]+)?)?|nocompat|license|copyright)\\s+(.*)",
                     "captures": {
                         "0": {
                             "name": "comment.block.documentation.js"
@@ -59,7 +59,7 @@
                             "name": "variable.other.jsdoc",
                             "patterns": [
                                 {
-                                    "match": "\\b(?:none|unsafeWindow|window\\.close|window\\.focus|window\\.onurlchange|GM[_\\.]addStyle|GM[_\\.]addElement|GM[_\\.]deleteValue|GM[_\\.]listValues|GM_addValueChangeListener|GM_removeValueChangeListener|GM[_\\.]setValue|GM[_\\.]getValue|GM_log|GM_getResourceText|GM_getResourceURL|GM\\.getResourceUrl|GM[_\\.]registerMenuCommand|GM_unregisterMenuCommand|GM[_\\.]openInTab|GM_xmlhttpRequest|GM\\.xmlHttpRequest|GM_download|GM_getTab|GM_saveTab|GM_getTabs|GM_notification|GM[_\\.]setClipboard|GM[_\\.]info)\\s*$",
+                                    "match": "\\b(?:none|unsafeWindow|window\\.close|window\\.focus|window\\.onurlchange|GM[_\\.]addStyle|GM[_\\.]addElement|GM[_\\.]deleteValue|GM[_\\.]listValues|GM_addValueChangeListener|GM_removeValueChangeListener|GM[_\\.]setValue|GM[_\\.]getValue|GM_log|GM_getResourceText|GM_getResourceURL|GM\\.getResourceUrl|GM[_\\.]registerMenuCommand|GM_unregisterMenuCommand|GM[_\\.]openInTab|GM_xmlhttpRequest|GM\\.xmlHttpRequest|GM_download|GM_getTab|GM_saveTab|GM_getTabs|GM[_\\.]notification|GM[_\\.]setClipboard|GM[_\\.]info)\\s*$",
                                     "name": "constant.language.symbol-type.jsdoc"
                                 }
                             ]
@@ -107,7 +107,7 @@
                     }
                 },
                 {
-                    "match": "^//\\s*(@(?:namespace|homepage|homepageURL|website|source|icon|iconURL|defaulticon|icon64|icon64URL|updateURL|downloadURL|supportURL|require|connect))\\s+(.*)",
+                    "match": "^//\\s*(@(?:namespace|homepage|homepageURL|website|source|icon|iconURL|defaulticon|icon64|icon64URL|updateURL|downloadURL|supportURL|installURL|contributionURL|require))\\s+(.*)",
                     "captures": {
                         "0": {
                             "name": "comment.block.documentation.js"
@@ -141,7 +141,7 @@
                     }
                 },
                 {
-                    "match": "^//\\s*(@(?:include|exclude))\\s+(.*)",
+                    "match": "^//\\s*(@contributionAmount)\\s+(.*)",
                     "captures": {
                         "0": {
                             "name": "comment.block.documentation.js"
@@ -150,17 +150,12 @@
                             "name": "storage.type.class.jsdoc"
                         },
                         "2": {
-                            "name": "variable.other.jsdoc",
-                            "patterns": [
-                                {
-                                    "include": "source.js#regexp"
-                                }
-                            ]
+                            "name": "constant.numeric.jsdoc"
                         }
                     }
                 },
                 {
-                    "match": "^//\\s*(@match)\\s+(.*)",
+                    "match": "^//\\s*(@(?:include|exclude(?:-match)?|connect|match))\\s+(.*)",
                     "captures": {
                         "0": {
                             "name": "comment.block.documentation.js"
@@ -192,6 +187,23 @@
                         },
                         "3": {
                             "name": "variable.other.link.underline.jsdoc"
+                        }
+                    }
+                },
+                {
+                    "match": "^//\\s*(@(?:in)?compatible)\\s*(\\S*)\\s*(.*)",
+                    "captures": {
+                        "0": {
+                            "name": "comment.block.documentation.js"
+                        },
+                        "1": {
+                            "name": "storage.type.class.jsdoc"
+                        },
+                        "2": {
+                            "name": "constant.language.symbol-type.jsdoc"
+                        },
+                        "3": {
+                            "name": "entity.name.type.jsdoc"
                         }
                     }
                 },
@@ -238,9 +250,7 @@
                         "1": {
                             "name": "entity.name.type.instance.jsdoc"
                         },
-                        "2": {
-
-                        }
+                        "2": {}
                     }
                 },
                 {

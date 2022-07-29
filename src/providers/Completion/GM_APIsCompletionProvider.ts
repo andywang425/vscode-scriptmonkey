@@ -16,7 +16,7 @@ const GM_APIsCompletionProvider = vscode.languages.registerCompletionItemProvide
                         doc.appendMarkdown(i.value);
                         break;
                     case 'code':
-                        doc.appendCodeblock(i.value, 'javascript');
+                        doc.appendCodeblock(i.value, 'typescript');
                         break;
                     default:
                         doc.appendText(i.value);
