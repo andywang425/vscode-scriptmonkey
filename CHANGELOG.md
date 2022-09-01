@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [0.0.3] - 2022-09-01
+
+### Added
+
+- Support metadata completion `@license`, `@copyright`, `@nocompat`.
+
 ## [0.0.2] - 2022-07-29
 
 ### Added
