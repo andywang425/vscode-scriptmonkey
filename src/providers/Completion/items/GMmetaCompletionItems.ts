@@ -345,6 +345,37 @@ const GMmetaCompletionItems = [
                 value: 'Injects the userscript without any wrapper and sandbox into the page.'
             }
         ]
+    },
+    {
+        label: '@license',
+        kind: vscode.CompletionItemKind.Snippet,
+        documentation: [
+            {
+                add: 'markdown',
+                value: 'The license that describes how people are allowed to copy or modify a script. Using a "Full name" or "Identifier" from [the SPDX License List](https://spdx.org/licenses/) is recommended. Lack of license implies users can install the script for personal use, but may not redistribute it. License is displayed on a script\'s info page.'
+            }
+        ]
+    },
+    {
+        label: '@copyright',
+        kind: vscode.CompletionItemKind.Snippet,
+        documentation: [
+            {
+                add: 'markdown',
+                value: 'The copyright of your script. Format: _year, name (link)_.'
+            }
+        ]
+    },
+    {
+        label: '@nocompat',
+        kind: vscode.CompletionItemKind.Snippet,
+        documentation: [
+            {
+                add: 'markdown',
+                value: 'At the moment TM tries to detect whether a script was written in knowledge of Google Chrome/Chromium by looking for the @match tag, but not every script uses it. That\'s why TM supports this tag to disable all optimizations that might be necessary to run scripts written for Firefox/Greasemonkey. To keep this tag extensible you can to add the browser name that can be handled by the script.'
+            }
+        ],
+        insertText: new vscode.SnippetString('@nocompat Chrome')
     }
 ]
 
