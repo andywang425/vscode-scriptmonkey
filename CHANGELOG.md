@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- Add some placeholders into the "userscript" code snippet.
+
 ## [0.0.3] - 2022-09-01
 
 ### Added
