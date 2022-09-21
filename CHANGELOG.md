@@ -2,6 +2,17 @@
 
 ## [Unreleased]
 
+## [0.0.4] - 2022-09-21
+
+### Added
+
+- Add some placeholders into the "userscript" code snippet to make the snippet more versatile and faster to edit.
+- Add a placeholder for metadata `@license`.
+
+### Changed
+
+- Delete the space after some metadata snippet strings.
+
 ## [0.0.3] - 2022-09-01
 
 ### Added

@@ -1,16 +1,16 @@
 // ==UserScript==
-// @name         New Userscript
-// @namespace    http://tampermonkey.net/
+// @name         Script name
+// @namespace    URL
 // @version      0.1
-// @description  Try to take over the world!
-// @author       You
+// @description  A brief summary to describe the script
+// @author       Your name
+// @license      GPL-3.0-or-later
 // @match        *://*/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        none
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
-    // Your code here...
-    const info = GM_info
+
 })();
