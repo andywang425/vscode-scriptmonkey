@@ -210,7 +210,7 @@ const GMmetaCompletionItems = [
                 value: 'Flags this script as compatible with a browser. Compatibility information will be shown on a script\'s page. Comments on compatibility can be included in the format `@compatible firefox Must disable pop-up blocker`. Recognized browsers are: `firefox`, `chrome`, `opera`, `safari`, `edge`.'
             }
         ],
-        insertText: new vscode.SnippetString('@compatible ${1|firefox,chrome,opera,safari,edge|} ')
+        insertText: new vscode.SnippetString('@compatible ${1|firefox,chrome,opera,safari,edge|}')
     },
     {
         label: '@incompatible',
@@ -221,7 +221,7 @@ const GMmetaCompletionItems = [
                 value: 'Flags this script as incompatible with a browser. Compatibility information will be shown on a script\'s page. Optional comments on compatibility can be included in the format `@incompatible firefox Broken since Firefox 23`. Recognized browsers are: `firefox`, `chrome`, `opera`, `safari`, `edge`.'
             }
         ],
-        insertText: new vscode.SnippetString('@incompatible ${1|firefox,chrome,opera,safari,edge|} ')
+        insertText: new vscode.SnippetString('@incompatible ${1|firefox,chrome,opera,safari,edge|}')
     },
     {
         label: '@include',
@@ -324,7 +324,7 @@ const GMmetaCompletionItems = [
                 value: 'This tag allows script developers to disclose whether they monetize their scripts. It is for example required by [GreasyFork](https://greasyfork.org/).'
             }
         ],
-        insertText: new vscode.SnippetString('@antifeature ${1|ads,tracking,miner|} ')
+        insertText: new vscode.SnippetString('@antifeature ${1|ads,tracking,miner|}')
     },
     {
         label: '@noframes',
@@ -354,7 +354,8 @@ const GMmetaCompletionItems = [
                 add: 'markdown',
                 value: 'The license that describes how people are allowed to copy or modify a script. Using a "Full name" or "Identifier" from [the SPDX License List](https://spdx.org/licenses/) is recommended. Lack of license implies users can install the script for personal use, but may not redistribute it. License is displayed on a script\'s info page.'
             }
-        ]
+        ],
+        insertText: new vscode.SnippetString('@license ${1|AGPL-3.0-only,AGPL-3.0-or-later,GPL-2.0-only,GPL-2.0-or-later,GPL-3.0-only,GPL-3.0-or-later,LGPL-2.0-only,LGPL-2.0-or-later,LGPL-2.1-only,LGPL-2.1-or-later,LGPL-3.0-only,LGPL-3.0-or-later,MIT,Unlicense|}')
     },
     {
         label: '@copyright',
