@@ -5,6 +5,7 @@ import GM_APIsCompletionProvider from './providers/Completion/GM_APIsCompletionP
 import GMdotAPIsCompletionProvider from './providers/Completion/GMdotAPIsCompletionProvider';
 import GMmetaCompletionProvider from './providers/Completion/GMmetaCompletionProvider';
 import GMotherCompletionProvider from './providers/Completion/GMotherCompletionProvider';
+import codeSnippetsCompletionProvider from './providers/Completion/codeSnippetsCompletionProvider';
 import GM_APIsHoverProvider from './providers/Hover/GM_APIsHoverProvider';
 import GMdotAPIsHoverProvider from './providers/Hover/GMdotAPIsHoverProvider';
 import GMotherHoverProvider from './providers/Hover/GMotherHoverProvider';
@@ -12,8 +13,7 @@ import GMotherHoverProvider from './providers/Hover/GMotherHoverProvider';
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-
-	context.subscriptions.push(GM_APIsCompletionProvider, GMdotAPIsCompletionProvider, GMmetaCompletionProvider, GMotherCompletionProvider, GM_APIsHoverProvider, GMdotAPIsHoverProvider, GMotherHoverProvider);
+	context.subscriptions.push(codeSnippetsCompletionProvider, GM_APIsCompletionProvider, GMdotAPIsCompletionProvider, GMmetaCompletionProvider, GMotherCompletionProvider, GM_APIsHoverProvider, GMdotAPIsHoverProvider, GMotherHoverProvider);
 }
 
 // this method is called when your extension is deactivated

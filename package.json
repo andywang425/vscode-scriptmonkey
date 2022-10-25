@@ -3,7 +3,7 @@
 	"displayName": "Scriptmonkey",
 	"description": "Userscript language support for vscode.",
 	"icon": "images/icon.png",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"repository": "https://github.com/andywang425/vscode-scriptmonkey",
 	"publisher": "andywang",
 	"engines": {
@@ -32,12 +32,26 @@
 				]
 			}
 		],
-		"snippets": [
-			{
-				"language": "javascript",
-				"path": "./snippets/snippets.json"
+		"configuration": {
+			"title": "Scriptmonkey",
+			"properties": {
+				"scriptmonkey.metaData.default.namespace": {
+					"type": "string",
+					"default": "URL",
+					"markdownDescription": "Used for auto filling `@namespace` in the code snippet `userscript`."
+				},
+				"scriptmonkey.metaData.default.author": {
+					"type": "string",
+					"default": "Your name",
+					"markdownDescription": "Used for auto filling `@author` in the code snippet `userscript`."
+				},
+				"scriptmonkey.metaData.default.icon": {
+					"type": "string",
+					"default": "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+					"markdownDescription": "Used for auto filling `@icon` in the code snippet `userscript`."
+				}
 			}
-		]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
