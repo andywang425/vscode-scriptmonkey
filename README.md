@@ -24,6 +24,8 @@ A simple userscript language support extension which provides syntax highlight, 
 
 ### Code Snippets
 
+Type `userscript` to generate a userscript template. You can modify the default values of some meta data keys in the extension settings.
+
 ![Code Snippets](images/code_snippets.gif)
 
 ## Release Notes

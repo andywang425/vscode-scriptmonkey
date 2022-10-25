@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- Store meta data values `@author`, `@icon` and `@namespace` for auto filling in the code snippet `userscript`.
+
 ## [0.0.4] - 2022-09-21
 
 ### Added
