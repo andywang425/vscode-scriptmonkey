@@ -3,7 +3,7 @@
 	"displayName": "Scriptmonkey",
 	"description": "Userscript language support for vscode.",
 	"icon": "images/icon.png",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"repository": "https://github.com/andywang425/vscode-scriptmonkey",
 	"publisher": "andywang",
 	"engines": {
@@ -29,7 +29,10 @@
 				"path": "./syntaxes/userjs.tmLanguage.json",
 				"injectTo": [
 					"source.js"
-				]
+				],
+				"embeddedLanguages": {
+					"source.css": "css"
+				}
 			}
 		],
 		"configuration": {

@@ -24,9 +24,113 @@
                     "include": "#userscript-header"
                 }
             ]
+        },
+        {
+            "begin": "(?:(GM[_\\.]addStyle)\\s*(\\())",
+            "end": "(?:(\\)))",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function.js"
+                },
+                "2": {
+                    "name": "meta.brace.round.js" 
+                }
+            },
+            "endCaptures": {
+                "1": {
+                    "name": "meta.brace.round.js"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#GMaddStyleArg"
+                }
+            ]
         }
     ],
     "repository": {
+        "GMaddStyleArg": {
+            "patterns": [
+                {
+                    "begin": "(\")",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "string.template.js"
+                        },
+                        "1": {
+                            "name": "punctuation.definition.string.begin.js"
+                        }
+                    },
+                    "contentName": "source.css",
+                    "end": "((\"))",
+                    "endCaptures": {
+                        "0": {
+                            "name": "string.template.js"
+                        },
+                        "1": {
+                            "name": "punctuation.definition.string.end.js"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "source.css"
+                        }
+                    ]
+                },
+                {
+                    "begin": "(')",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "string.template.js"
+                        },
+                        "1": {
+                            "name": "punctuation.definition.string.begin.js"
+                        }
+                    },
+                    "contentName": "source.css",
+                    "end": "(('))",
+                    "endCaptures": {
+                        "0": {
+                            "name": "string.template.js"
+                        },
+                        "1": {
+                            "name": "punctuation.definition.string.end.js"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "source.css"
+                        }
+                    ]
+                },
+                {
+                    "begin": "(`)",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "string.template.js"
+                        },
+                        "1": {
+                            "name": "punctuation.definition.string.begin.js"
+                        }
+                    },
+                    "contentName": "source.css",
+                    "end": "((`))",
+                    "endCaptures": {
+                        "0": {
+                            "name": "string.template.js"
+                        },
+                        "1": {
+                            "name": "punctuation.definition.string.end.js"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "source.css"
+                        }
+                    ]
+                }
+            ]
+        },
         "userscript-header": {
             "patterns": [
                 {
