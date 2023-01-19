@@ -6,7 +6,13 @@ A simple userscript language support extension which provides syntax highlight, 
 
 ### Syntax highlight
 
+- **Metadata**
+
 ![Metadata highlight](images/metadata.png)
+
+- **Css in GM_addstyle**
+
+![GM_addstyle highlight](images/GM_addstyle.png)
 
 ### Completion
 

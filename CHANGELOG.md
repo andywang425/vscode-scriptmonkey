@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [0.0.6] - 2023-1-19
+
+### Added
+
+- Support CSS highlight in GM function `addStyle`.
+
 ## [0.0.5] - 2022-10-25
 
 ### Added
