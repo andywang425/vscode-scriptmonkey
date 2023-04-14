@@ -1,9 +1,13 @@
 import * as vscode from 'vscode';
 import GMdotAPIsHoverItems from './items/GMdotAPIsHoverItems';
+import checkIfShouldRun from '../../other/fileSuffixChecker';
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 const GMdotAPIsHoverProvider = vscode.languages.registerHoverProvider('javascript', {
     provideHover(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken) {
-
+        if (!checkIfShouldRun()) {
+            return;
+        }
         const linePrefix = document.lineAt(position).text.substring(0, position.character);
         const word = document.getText(document.getWordRangeAtPosition(position));
         if (!linePrefix.includes('GM.')) {
@@ -28,6 +32,6 @@ const GMdotAPIsHoverProvider = vscode.languages.registerHoverProvider('javascrip
             return new vscode.Hover(markdownString);
         }
     }
-})
+});
 
 export default GMdotAPIsHoverProvider;

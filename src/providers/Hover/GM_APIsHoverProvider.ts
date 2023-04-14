@@ -1,9 +1,13 @@
 import * as vscode from 'vscode';
 import GM_APIsHoverItems from './items/GM_APIsHoverItems';
+import checkIfShouldRun from '../../other/fileSuffixChecker';
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 const GM_APIsHoverProvider = vscode.languages.registerHoverProvider('javascript', {
     provideHover(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken) {
-
+        if (!checkIfShouldRun()) {
+            return;
+        }
         const range = document.getWordRangeAtPosition(position);
         const word = document.getText(range);
         const hoverItem = GM_APIsHoverItems.find(i => i.word === word);
@@ -25,6 +29,6 @@ const GM_APIsHoverProvider = vscode.languages.registerHoverProvider('javascript'
             return new vscode.Hover(markdownString);
         }
     }
-})
+});
 
 export default GM_APIsHoverProvider;

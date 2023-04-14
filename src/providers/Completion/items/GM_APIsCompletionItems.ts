@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 const GM_APIsCompletionItems = [
     {
         label: 'GM_info',
@@ -221,5 +222,6 @@ const GM_APIsCompletionItems = [
             }
         ]
     }
-]
+];
+
 export default GM_APIsCompletionItems;

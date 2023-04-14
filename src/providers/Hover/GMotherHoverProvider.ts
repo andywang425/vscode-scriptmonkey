@@ -1,9 +1,13 @@
 import * as vscode from 'vscode';
 import GMotherHoverItems from './items/GMotherHoverItems';
+import checkIfShouldRun from '../../other/fileSuffixChecker';
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 const GMotherHoverProvider = vscode.languages.registerHoverProvider('javascript', {
     provideHover(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken) {
-
+        if (!checkIfShouldRun()) {
+            return;
+        }
         const word = document.getText(document.getWordRangeAtPosition(position));
         const hoverItem = GMotherHoverItems.find(i => i.word === word);
         if (hoverItem) {
@@ -24,6 +28,6 @@ const GMotherHoverProvider = vscode.languages.registerHoverProvider('javascript'
             return new vscode.Hover(markdownString);
         }
     }
-})
+});
 
 export default GMotherHoverProvider;

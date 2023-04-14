@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/naming-convention
 const GMdotAPIsHoverItems = [
     {
         word: 'addStyle',

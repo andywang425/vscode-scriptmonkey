@@ -37,6 +37,6 @@ const getCodeSnippets = () => {
             ]
         }
     ];
-}
+};
 
 export default getCodeSnippets;

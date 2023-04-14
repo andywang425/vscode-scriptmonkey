@@ -2,8 +2,10 @@ import * as vscode from 'vscode';
 import getCodeSnippets from './items/codeSnippetsCompletionItems';
 
 let codeSnippetsCompletionItems = getCodeSnippets();
-vscode.workspace.onDidChangeConfiguration(e => {
-    codeSnippetsCompletionItems = getCodeSnippets();
+vscode.workspace.onDidChangeConfiguration(event => {
+    if (event.affectsConfiguration('scriptmonkey.metaData.default')) {
+        codeSnippetsCompletionItems = getCodeSnippets();
+    }
 });
 
 const codeSnippetsCompletionProvider = vscode.languages.registerCompletionItemProvider('javascript', {

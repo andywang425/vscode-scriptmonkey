@@ -1,11 +1,17 @@
 import * as vscode from 'vscode';
 import GM_APIsCompletionItems from './items/GM_APIsCompletionItems';
+import checkIfShouldRun from '../../other/fileSuffixChecker';
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 const GM_APIsCompletionProvider = vscode.languages.registerCompletionItemProvider('javascript', {
     provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
+        if (!checkIfShouldRun()) {
+            return;
+        }
         const word = document.getText(document.getWordRangeAtPosition(position));
-        if (document.lineAt(position).text.endsWith('.' + word))
+        if (document.lineAt(position).text.endsWith('.' + word)) {
             return undefined;
+        }
         const list: vscode.CompletionItem[] = GM_APIsCompletionItems.map(item => {
             const completionItem = new vscode.CompletionItem(item.label, item.kind);
             completionItem.detail = 'GM_* APIs';

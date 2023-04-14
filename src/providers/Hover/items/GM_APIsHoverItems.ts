@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/naming-convention
 const GM_APIsHoverItems = [
     {
         word: 'GM_info',
@@ -329,6 +330,6 @@ const GM_APIsHoverItems = [
             }
         ]
     }
-]
+];
 
 export default GM_APIsHoverItems;
