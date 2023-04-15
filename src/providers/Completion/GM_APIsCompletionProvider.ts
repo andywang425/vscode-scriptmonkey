@@ -5,7 +5,7 @@ import checkIfShouldRun from '../../other/fileSuffixChecker';
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const GM_APIsCompletionProvider = vscode.languages.registerCompletionItemProvider('javascript', {
     provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
-        if (!checkIfShouldRun()) {
+        if (!checkIfShouldRun(document)) {
             return;
         }
         const word = document.getText(document.getWordRangeAtPosition(position));

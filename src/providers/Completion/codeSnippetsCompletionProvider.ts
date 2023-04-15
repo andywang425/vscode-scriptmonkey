@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import getCodeSnippets from './items/codeSnippetsCompletionItems';
+import checkIfShouldRun from '../../other/fileSuffixChecker';
 
 let codeSnippetsCompletionItems = getCodeSnippets();
 vscode.workspace.onDidChangeConfiguration(event => {
@@ -10,6 +11,9 @@ vscode.workspace.onDidChangeConfiguration(event => {
 
 const codeSnippetsCompletionProvider = vscode.languages.registerCompletionItemProvider('javascript', {
     provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
+        if (!checkIfShouldRun(document)) {
+            return;
+        }
         const list: vscode.CompletionItem[] = codeSnippetsCompletionItems.map(item => {
             const completionItem = new vscode.CompletionItem(item.label, item.kind);
             completionItem.detail = item.detail;

@@ -2,6 +2,9 @@
 
 A simple userscript language support extension which provides syntax highlight, completion, hover, and code snippets.
 
+Most features of Scriptmonkey activates only when filename ends with `.user.js` by default to prevent polluting non userscript files.
+You can modify the extension settings to make Scriptmonkey work in other javascript files.
+
 ## Features
 
 ### Syntax highlight
