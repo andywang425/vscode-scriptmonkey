@@ -1,27 +1,20 @@
 import * as vscode from 'vscode';
 
-let activeFileSuffixes = vscode.workspace.getConfiguration('scriptmonkey.file').get('suffix') as string[];
+let activeFileSuffixes = vscode.workspace.getConfiguration('scriptmonkey.activation condition').get('file suffix') as string[];
 vscode.workspace.onDidChangeConfiguration((event) => {
-    if (event.affectsConfiguration('scriptmonkey.file.suffix')) {
-        activeFileSuffixes = vscode.workspace.getConfiguration('scriptmonkey.file').get('suffix') as string[];
+    if (event.affectsConfiguration('scriptmonkey.activation condition.file suffix')) {
+        activeFileSuffixes = vscode.workspace.getConfiguration('scriptmonkey.activation condition').get('file suffix') as string[];
     }
 });
 
-const checkIfShouldRun = () => {
-    const activeEditor = vscode.window.activeTextEditor;
-    if (activeEditor) {
-        const fileName = activeEditor.document.fileName;
-        const matchExt = fileName.match('\\..+$');
-        const suffix = matchExt === null ? '' : matchExt[0];
-        console.log('extension', suffix);
-        console.log('activeFileSuffixes', activeFileSuffixes);
-        if (activeFileSuffixes.includes(suffix)) {
-            console.log(true);
-            return true;
-        }
-        console.log(false);
-        return false;
+const checkIfShouldRun = (document: vscode.TextDocument) => {
+    const fileName = document.fileName;
+    const matchExt = fileName.match('\\..+$') || '';
+    const suffix = matchExt[0];
+    if (activeFileSuffixes.includes(suffix)) {
+        return true;
     }
+    return false;
 };
 
 export default checkIfShouldRun;

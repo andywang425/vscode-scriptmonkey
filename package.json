@@ -3,7 +3,7 @@
 	"displayName": "Scriptmonkey",
 	"description": "Userscript language support for vscode.",
 	"icon": "images/icon.png",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"repository": "https://github.com/andywang425/vscode-scriptmonkey",
 	"publisher": "andywang",
 	"engines": {
@@ -53,9 +53,9 @@
 					"default": "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
 					"markdownDescription": "Used for auto filling `@icon` in the code snippet `userscript`."
 				},
-				"scriptmonkey.file.suffix": {
+				"scriptmonkey.activation condition.file suffix": {
 					"type": "array",
-					"description": "File suffixes to enable Scriptmonkey for.",
+					"markdownDescription": "Completion, hover, and code snippets are only enabled in the files with specific suffixes.\n\nSyntax highlight always takes effect because injection grammar contributions aren't dynamic, see [#53885](https://github.com/microsoft/vscode/issues/53885).",
 					"default": [
 						".user.js"
 					],

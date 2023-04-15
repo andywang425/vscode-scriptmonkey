@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [0.0.7] - 2023-4-15
+
+### Added
+
+- New extension setting: Completion, hover, and code snippets are only enabled in the files with specific suffixes.
+
 ## [0.0.6] - 2023-1-19
 
 ### Added

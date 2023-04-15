@@ -5,7 +5,7 @@ import checkIfShouldRun from '../../other/fileSuffixChecker';
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const GMdotAPIsHoverProvider = vscode.languages.registerHoverProvider('javascript', {
     provideHover(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken) {
-        if (!checkIfShouldRun()) {
+        if (!checkIfShouldRun(document)) {
             return;
         }
         const linePrefix = document.lineAt(position).text.substring(0, position.character);
