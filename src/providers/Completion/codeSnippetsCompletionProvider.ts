@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import getCodeSnippets from './items/codeSnippetsCompletionItems';
-import checkIfShouldRun from '../../other/fileSuffixChecker';
+import checkIfShouldRun from '../../other/checkIfShouldRun';
 
 let codeSnippetsCompletionItems = getCodeSnippets();
 vscode.workspace.onDidChangeConfiguration(event => {

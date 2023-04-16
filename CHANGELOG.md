@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- New extension setting: Completion, hover, and code snippets are only enabled in files start with `// ==UserScript==`.
+
 ## [0.0.7] - 2023-4-15
 
 ### Added
