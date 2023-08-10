@@ -69,7 +69,7 @@
 		}
 	},
 	"scripts": {
-		"vscode:prepublish": "npm run compile",
+		"vscode:prepublish": "npm run compile && npm run web:package",
 		"compile": "tsc -p ./",
 		"web:compile": "webpack",
 		"watch": "tsc -watch -p ./",
@@ -78,6 +78,7 @@
 		"web:package": "webpack --mode production --devtool hidden-source-map",
 		"lint": "eslint src --ext ts",
 		"test": "node ./out/test/runTest.js",
+		"preweb:test": "npm run web:compile && npm run lint",
 		"web:test": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. --extensionTestsPath=out/test/suite/index.browser.js",
 		"web:open": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. ."
 	},
