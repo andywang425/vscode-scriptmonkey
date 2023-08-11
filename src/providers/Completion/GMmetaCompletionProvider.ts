@@ -32,6 +32,6 @@ const GMmetaCompletionProvider = vscode.languages.registerCompletionItemProvider
 
         return list;
     }
-});
+}, '@');
 
 export default GMmetaCompletionProvider;

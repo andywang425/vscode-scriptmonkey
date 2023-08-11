@@ -3,7 +3,7 @@ import * as vscode from 'vscode';
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const GMmetaCompletionItems = [
     {
-        label: '@name',
+        label: 'name',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -13,7 +13,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@namespace',
+        label: 'namespace',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -23,7 +23,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@version',
+        label: 'version',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -33,7 +33,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@author',
+        label: 'author',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -43,7 +43,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@description',
+        label: 'description',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -53,7 +53,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@homepage',
+        label: 'homepage',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -63,7 +63,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@homepageURL',
+        label: 'homepageURL',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -73,7 +73,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@website',
+        label: 'website',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -83,7 +83,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@source',
+        label: 'source',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -93,7 +93,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@icon',
+        label: 'icon',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -103,7 +103,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@iconURL',
+        label: 'iconURL',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -113,7 +113,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@defaulticon',
+        label: 'defaulticon',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -123,7 +123,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@icon64',
+        label: 'icon64',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -133,7 +133,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@icon64URL',
+        label: 'icon64URL',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -143,7 +143,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@updateURL',
+        label: 'updateURL',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -153,7 +153,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@downloadURL',
+        label: 'downloadURL',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -163,7 +163,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@installURL',
+        label: 'installURL',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -173,7 +173,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@contributionURL',
+        label: 'contributionURL',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -183,7 +183,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@contributionAmount',
+        label: 'contributionAmount',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -193,7 +193,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@supportURL',
+        label: 'supportURL',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -203,7 +203,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@compatible',
+        label: 'compatible',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -214,7 +214,7 @@ const GMmetaCompletionItems = [
         insertText: new vscode.SnippetString('@compatible ${1|firefox,chrome,opera,safari,edge|}')
     },
     {
-        label: '@incompatible',
+        label: 'incompatible',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -225,7 +225,7 @@ const GMmetaCompletionItems = [
         insertText: new vscode.SnippetString('@incompatible ${1|firefox,chrome,opera,safari,edge|}')
     },
     {
-        label: '@include',
+        label: 'include',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -235,7 +235,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@exclude',
+        label: 'exclude',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -245,7 +245,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@exclude-match',
+        label: 'exclude-match',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -255,7 +255,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@match',
+        label: 'match',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -265,7 +265,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@require',
+        label: 'require',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -275,7 +275,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@resource',
+        label: 'resource',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -285,7 +285,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@connect',
+        label: 'connect',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -295,7 +295,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@run-at',
+        label: 'run-at',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -306,7 +306,7 @@ const GMmetaCompletionItems = [
         insertText: new vscode.SnippetString('@run-at ${1|document-start,document-body,document-end,document-idle,context-menu|}')
     },
     {
-        label: '@grant',
+        label: 'grant',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -317,7 +317,7 @@ const GMmetaCompletionItems = [
         insertText: new vscode.SnippetString('@grant ${1|none,unsafeWindow,window.close,window.focus,window.onurlchange,GM_info,GM_addStyle,GM_addElement,GM_deleteValue,GM_listValues,GM_addValueChangeListener,GM_removeValueChangeListener,GM_setValue,GM_getValue,GM_log,GM_getResourceText,GM_getResourceURL,GM_registerMenuCommand,GM_unregisterMenuCommand,GM_openInTab,GM_xmlhttpRequest,GM_download,GM_getTab,GM_saveTab,GM_getTabs,GM_notification,GM_setClipboard,GM.addStyle,GM.addElement,GM.registerMenuCommand,GM.deleteValue,GM.getResourceURL,GM.getValue,GM.info,GM.listValues,GM.notification,GM.openInTab,GM.setClipboard,GM.setValue,GM.xmlHttpRequest|}')
     },
     {
-        label: '@antifeature',
+        label: 'antifeature',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -328,7 +328,7 @@ const GMmetaCompletionItems = [
         insertText: new vscode.SnippetString('@antifeature ${1|ads,tracking,miner|}')
     },
     {
-        label: '@noframes',
+        label: 'noframes',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -338,7 +338,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@unwrap',
+        label: 'unwrap',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -348,7 +348,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@license',
+        label: 'license',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -359,7 +359,7 @@ const GMmetaCompletionItems = [
         insertText: new vscode.SnippetString('@license ${1|AGPL-3.0-only,AGPL-3.0-or-later,GPL-2.0-only,GPL-2.0-or-later,GPL-3.0-only,GPL-3.0-or-later,LGPL-2.0-only,LGPL-2.0-or-later,LGPL-2.1-only,LGPL-2.1-or-later,LGPL-3.0-only,LGPL-3.0-or-later,MIT,Unlicense|}')
     },
     {
-        label: '@copyright',
+        label: 'copyright',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -369,7 +369,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@nocompat',
+        label: 'nocompat',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
