@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import GMotherCompletionItems from './items/GMotherCompletionItems';
-import checkIfShouldRun from '../../other/fileSuffixChecker';
+import checkIfShouldRun from '../../other/checkIfShouldRun';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const GMotherCompletionProvider = vscode.languages.registerCompletionItemProvider('javascript', {

@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import GMdotAPIsHoverItems from './items/GMdotAPIsHoverItems';
-import checkIfShouldRun from '../../other/fileSuffixChecker';
+import checkIfShouldRun from '../../other/checkIfShouldRun';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const GMdotAPIsHoverProvider = vscode.languages.registerHoverProvider('javascript', {

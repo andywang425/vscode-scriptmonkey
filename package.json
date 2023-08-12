@@ -3,7 +3,7 @@
 	"displayName": "Scriptmonkey",
 	"description": "Userscript language support for vscode.",
 	"icon": "images/icon.png",
-	"version": "0.0.7",
+	"version": "0.0.8",
 	"repository": "https://github.com/andywang425/vscode-scriptmonkey",
 	"publisher": "andywang",
 	"engines": {
@@ -56,7 +56,7 @@
 				},
 				"scriptmonkey.activation condition.file suffix": {
 					"type": "array",
-					"markdownDescription": "Completion, hover, and code snippets are only enabled in the files with specific suffixes.\n\nSyntax highlight always takes effect because injection grammar contributions aren't dynamic, see [#53885](https://github.com/microsoft/vscode/issues/53885).",
+					"markdownDescription": "Completion, hover, and code snippets are only enabled in files with specific suffixes.\n\nSyntax highlight always takes effect because injection grammar contributions aren't dynamic, see [#53885](https://github.com/microsoft/vscode/issues/53885).",
 					"default": [
 						".user.js"
 					],
@@ -64,6 +64,11 @@
 						"type": "string",
 						"pattern": "^\\..+$"
 					}
+				},
+				"scriptmonkey.activation condition.userscript header": {
+					"type": "boolean",
+					"markdownDescription": "Completion, hover, and code snippets are only enabled in files start with `// ==UserScript==`.\n\nSyntax highlight always takes effect because injection grammar contributions aren't dynamic, see [#53885](https://github.com/microsoft/vscode/issues/53885).",
+					"default": false
 				}
 			}
 		}

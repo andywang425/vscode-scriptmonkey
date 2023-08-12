@@ -2,6 +2,16 @@
 
 ## [Unreleased]
 
+## [0.0.8] - 2023-8-12
+
+### Added
+
+- New extension setting: Completion, hover, and code snippets are only enabled in files start with `// ==UserScript==`.
+
+### Fixed
+
+- Autocomplete/Suggestions don't work in metadata.
+
 ## [0.0.7] - 2023-4-15
 
 ### Added

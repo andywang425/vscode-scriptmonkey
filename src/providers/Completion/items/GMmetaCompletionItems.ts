@@ -3,7 +3,7 @@ import * as vscode from 'vscode';
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const GMmetaCompletionItems = [
     {
-        label: '@name',
+        label: 'name',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -13,7 +13,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@namespace',
+        label: 'namespace',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -23,7 +23,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@version',
+        label: 'version',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -33,7 +33,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@author',
+        label: 'author',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -43,7 +43,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@description',
+        label: 'description',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -53,7 +53,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@homepage',
+        label: 'homepage',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -63,7 +63,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@homepageURL',
+        label: 'homepageURL',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -73,7 +73,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@website',
+        label: 'website',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -83,7 +83,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@source',
+        label: 'source',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -93,7 +93,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@icon',
+        label: 'icon',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -103,7 +103,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@iconURL',
+        label: 'iconURL',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -113,7 +113,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@defaulticon',
+        label: 'defaulticon',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -123,7 +123,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@icon64',
+        label: 'icon64',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -133,7 +133,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@icon64URL',
+        label: 'icon64URL',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -143,7 +143,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@updateURL',
+        label: 'updateURL',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -153,7 +153,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@downloadURL',
+        label: 'downloadURL',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -163,7 +163,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@installURL',
+        label: 'installURL',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -173,7 +173,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@contributionURL',
+        label: 'contributionURL',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -183,7 +183,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@contributionAmount',
+        label: 'contributionAmount',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -193,7 +193,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@supportURL',
+        label: 'supportURL',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -203,7 +203,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@compatible',
+        label: 'compatible',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -211,10 +211,10 @@ const GMmetaCompletionItems = [
                 value: 'Flags this script as compatible with a browser. Compatibility information will be shown on a script\'s page. Comments on compatibility can be included in the format `@compatible firefox Must disable pop-up blocker`. Recognized browsers are: `firefox`, `chrome`, `opera`, `safari`, `edge`.'
             }
         ],
-        insertText: new vscode.SnippetString('@compatible ${1|firefox,chrome,opera,safari,edge|}')
+        insertText: new vscode.SnippetString('compatible ${1|firefox,chrome,opera,safari,edge|}')
     },
     {
-        label: '@incompatible',
+        label: 'incompatible',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -222,10 +222,10 @@ const GMmetaCompletionItems = [
                 value: 'Flags this script as incompatible with a browser. Compatibility information will be shown on a script\'s page. Optional comments on compatibility can be included in the format `@incompatible firefox Broken since Firefox 23`. Recognized browsers are: `firefox`, `chrome`, `opera`, `safari`, `edge`.'
             }
         ],
-        insertText: new vscode.SnippetString('@incompatible ${1|firefox,chrome,opera,safari,edge|}')
+        insertText: new vscode.SnippetString('incompatible ${1|firefox,chrome,opera,safari,edge|}')
     },
     {
-        label: '@include',
+        label: 'include',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -235,7 +235,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@exclude',
+        label: 'exclude',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -245,7 +245,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@exclude-match',
+        label: 'exclude-match',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -255,7 +255,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@match',
+        label: 'match',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -265,7 +265,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@require',
+        label: 'require',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -275,7 +275,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@resource',
+        label: 'resource',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -285,7 +285,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@connect',
+        label: 'connect',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -295,7 +295,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@run-at',
+        label: 'run-at',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -303,10 +303,10 @@ const GMmetaCompletionItems = [
                 value: 'Decide when the script will execute.'
             }
         ],
-        insertText: new vscode.SnippetString('@run-at ${1|document-start,document-body,document-end,document-idle,context-menu|}')
+        insertText: new vscode.SnippetString('run-at ${1|document-start,document-body,document-end,document-idle,context-menu|}')
     },
     {
-        label: '@grant',
+        label: 'grant',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -314,10 +314,10 @@ const GMmetaCompletionItems = [
                 value: 'Specify which special APIs should be granted and can be used when the script executes.'
             }
         ],
-        insertText: new vscode.SnippetString('@grant ${1|none,unsafeWindow,window.close,window.focus,window.onurlchange,GM_info,GM_addStyle,GM_addElement,GM_deleteValue,GM_listValues,GM_addValueChangeListener,GM_removeValueChangeListener,GM_setValue,GM_getValue,GM_log,GM_getResourceText,GM_getResourceURL,GM_registerMenuCommand,GM_unregisterMenuCommand,GM_openInTab,GM_xmlhttpRequest,GM_download,GM_getTab,GM_saveTab,GM_getTabs,GM_notification,GM_setClipboard,GM.addStyle,GM.addElement,GM.registerMenuCommand,GM.deleteValue,GM.getResourceURL,GM.getValue,GM.info,GM.listValues,GM.notification,GM.openInTab,GM.setClipboard,GM.setValue,GM.xmlHttpRequest|}')
+        insertText: new vscode.SnippetString('grant ${1|none,unsafeWindow,window.close,window.focus,window.onurlchange,GM_info,GM_addStyle,GM_addElement,GM_deleteValue,GM_listValues,GM_addValueChangeListener,GM_removeValueChangeListener,GM_setValue,GM_getValue,GM_log,GM_getResourceText,GM_getResourceURL,GM_registerMenuCommand,GM_unregisterMenuCommand,GM_openInTab,GM_xmlhttpRequest,GM_download,GM_getTab,GM_saveTab,GM_getTabs,GM_notification,GM_setClipboard,GM.addStyle,GM.addElement,GM.registerMenuCommand,GM.deleteValue,GM.getResourceURL,GM.getValue,GM.info,GM.listValues,GM.notification,GM.openInTab,GM.setClipboard,GM.setValue,GM.xmlHttpRequest|}')
     },
     {
-        label: '@antifeature',
+        label: 'antifeature',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -325,10 +325,10 @@ const GMmetaCompletionItems = [
                 value: 'This tag allows script developers to disclose whether they monetize their scripts. It is for example required by [GreasyFork](https://greasyfork.org/).'
             }
         ],
-        insertText: new vscode.SnippetString('@antifeature ${1|ads,tracking,miner|}')
+        insertText: new vscode.SnippetString('antifeature ${1|ads,tracking,miner|}')
     },
     {
-        label: '@noframes',
+        label: 'noframes',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -338,7 +338,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@unwrap',
+        label: 'unwrap',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -348,7 +348,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@license',
+        label: 'license',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -356,10 +356,10 @@ const GMmetaCompletionItems = [
                 value: 'The license that describes how people are allowed to copy or modify a script. Using a "Full name" or "Identifier" from [the SPDX License List](https://spdx.org/licenses/) is recommended. Lack of license implies users can install the script for personal use, but may not redistribute it. License is displayed on a script\'s info page.'
             }
         ],
-        insertText: new vscode.SnippetString('@license ${1|AGPL-3.0-only,AGPL-3.0-or-later,GPL-2.0-only,GPL-2.0-or-later,GPL-3.0-only,GPL-3.0-or-later,LGPL-2.0-only,LGPL-2.0-or-later,LGPL-2.1-only,LGPL-2.1-or-later,LGPL-3.0-only,LGPL-3.0-or-later,MIT,Unlicense|}')
+        insertText: new vscode.SnippetString('license ${1|AGPL-3.0-only,AGPL-3.0-or-later,GPL-2.0-only,GPL-2.0-or-later,GPL-3.0-only,GPL-3.0-or-later,LGPL-2.0-only,LGPL-2.0-or-later,LGPL-2.1-only,LGPL-2.1-or-later,LGPL-3.0-only,LGPL-3.0-or-later,MIT,Unlicense|}')
     },
     {
-        label: '@copyright',
+        label: 'copyright',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -369,7 +369,7 @@ const GMmetaCompletionItems = [
         ]
     },
     {
-        label: '@nocompat',
+        label: 'nocompat',
         kind: vscode.CompletionItemKind.Snippet,
         documentation: [
             {
@@ -377,7 +377,7 @@ const GMmetaCompletionItems = [
                 value: 'At the moment TM tries to detect whether a script was written in knowledge of Google Chrome/Chromium by looking for the @match tag, but not every script uses it. That\'s why TM supports this tag to disable all optimizations that might be necessary to run scripts written for Firefox/Greasemonkey. To keep this tag extensible you can to add the browser name that can be handled by the script.'
             }
         ],
-        insertText: new vscode.SnippetString('@nocompat Chrome')
+        insertText: new vscode.SnippetString('nocompat Chrome')
     }
 ];
 
