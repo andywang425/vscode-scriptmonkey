@@ -1,19 +1,19 @@
-import * as vscode from 'vscode';
+import * as vscode from 'vscode'
 
 const getCodeSnippets = () => {
-    const config = vscode.workspace.getConfiguration('scriptmonkey.metaData.default');
+  const config = vscode.workspace.getConfiguration('scriptmonkey.metaData.default')
 
-    const metaDataDefault = {
-        author: config.get('author'),
-        namespace: config.get('namespace'),
-        icon: config.get('icon')
-    };
+  const metaDataDefault = {
+    author: config.get('author'),
+    namespace: config.get('namespace'),
+    icon: config.get('icon')
+  }
 
-    return [
-        {
-            label: 'userscript',
-            kind: vscode.CompletionItemKind.Snippet,
-            insertText: `\/\/ ==UserScript==
+  return [
+    {
+      label: 'userscript',
+      kind: vscode.CompletionItemKind.Snippet,
+      insertText: `\/\/ ==UserScript==
 \/\/ @name         \${1:Script name}
 \/\/ @namespace    \${2:${metaDataDefault.namespace}}
 \/\/ @version      \${3:0.1}
@@ -28,15 +28,15 @@ const getCodeSnippets = () => {
     'use strict';
     $0
 })();`,
-            detail: 'userscript',
-            documentation: [
-                {
-                    add: 'text',
-                    value: 'Create a new userscript'
-                }
-            ]
+      detail: 'userscript',
+      documentation: [
+        {
+          add: 'text',
+          value: 'Create a new userscript'
         }
-    ];
-};
+      ]
+    }
+  ]
+}
 
-export default getCodeSnippets;
+export default getCodeSnippets
