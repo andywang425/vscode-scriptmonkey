@@ -2,7 +2,6 @@ import * as vscode from 'vscode'
 import GMmetaCompletionItems from './items/GMmetaCompletionItems'
 import checkIfShouldRun from '../../other/checkIfShouldRun'
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 const GMmetaCompletionProvider = vscode.languages.registerCompletionItemProvider(
   'javascript',
   {

@@ -1,6 +1,5 @@
 import * as vscode from 'vscode'
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 const GMotherCompletionItems = [
   {
     label: 'unsafeWindow',

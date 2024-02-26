@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/naming-convention
 const GM_APIsHoverItems = [
   {
     word: 'GM_info',
