@@ -1,4 +1,4 @@
-import * as vscode from 'vscode';
+import * as vscode from 'vscode'
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const GMmetaCompletionItems = [
@@ -408,6 +408,6 @@ const GMmetaCompletionItems = [
     ],
     insertText: new vscode.SnippetString('nocompat Chrome')
   }
-];
+]
 
-export default GMmetaCompletionItems;
+export default GMmetaCompletionItems

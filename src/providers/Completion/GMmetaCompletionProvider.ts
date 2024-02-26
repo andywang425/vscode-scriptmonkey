@@ -1,6 +1,6 @@
-import * as vscode from 'vscode';
-import GMmetaCompletionItems from './items/GMmetaCompletionItems';
-import checkIfShouldRun from '../../other/checkIfShouldRun';
+import * as vscode from 'vscode'
+import GMmetaCompletionItems from './items/GMmetaCompletionItems'
+import checkIfShouldRun from '../../other/checkIfShouldRun'
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const GMmetaCompletionProvider = vscode.languages.registerCompletionItemProvider(
@@ -13,34 +13,34 @@ const GMmetaCompletionProvider = vscode.languages.registerCompletionItemProvider
       context: vscode.CompletionContext
     ) {
       if (!checkIfShouldRun(document)) {
-        return;
+        return
       }
       const list: vscode.CompletionItem[] = GMmetaCompletionItems.map((item) => {
-        const completionItem = new vscode.CompletionItem('@' + item.label, item.kind);
-        completionItem.detail = 'GM Metadata';
-        completionItem.insertText = item.insertText ?? item.label + ' ';
-        const doc = new vscode.MarkdownString();
+        const completionItem = new vscode.CompletionItem('@' + item.label, item.kind)
+        completionItem.detail = 'GM Metadata'
+        completionItem.insertText = item.insertText ?? item.label + ' '
+        const doc = new vscode.MarkdownString()
         for (const i of item.documentation) {
           switch (i.add) {
             case 'markdown':
-              doc.appendMarkdown(i.value);
-              break;
+              doc.appendMarkdown(i.value)
+              break
             case 'code':
-              doc.appendCodeblock(i.value, 'typescript');
-              break;
+              doc.appendCodeblock(i.value, 'typescript')
+              break
             default:
-              doc.appendText(i.value);
-              break;
+              doc.appendText(i.value)
+              break
           }
         }
-        completionItem.documentation = doc;
-        return completionItem;
-      });
+        completionItem.documentation = doc
+        return completionItem
+      })
 
-      return list;
+      return list
     }
   },
   '@'
-);
+)
 
-export default GMmetaCompletionProvider;
+export default GMmetaCompletionProvider

@@ -1,13 +1,13 @@
-import * as vscode from 'vscode';
-import getCodeSnippets from './items/codeSnippetsCompletionItems';
-import checkIfShouldRun from '../../other/checkIfShouldRun';
+import * as vscode from 'vscode'
+import getCodeSnippets from './items/codeSnippetsCompletionItems'
+import checkIfShouldRun from '../../other/checkIfShouldRun'
 
-let codeSnippetsCompletionItems = getCodeSnippets();
+let codeSnippetsCompletionItems = getCodeSnippets()
 vscode.workspace.onDidChangeConfiguration((event) => {
   if (event.affectsConfiguration('scriptmonkey.metaData.default')) {
-    codeSnippetsCompletionItems = getCodeSnippets();
+    codeSnippetsCompletionItems = getCodeSnippets()
   }
-});
+})
 
 const codeSnippetsCompletionProvider = vscode.languages.registerCompletionItemProvider(
   'javascript',
@@ -19,33 +19,33 @@ const codeSnippetsCompletionProvider = vscode.languages.registerCompletionItemPr
       context: vscode.CompletionContext
     ) {
       if (!checkIfShouldRun(document)) {
-        return;
+        return
       }
       const list: vscode.CompletionItem[] = codeSnippetsCompletionItems.map((item) => {
-        const completionItem = new vscode.CompletionItem(item.label, item.kind);
-        completionItem.detail = item.detail;
-        completionItem.insertText = new vscode.SnippetString(item.insertText);
-        const doc = new vscode.MarkdownString();
+        const completionItem = new vscode.CompletionItem(item.label, item.kind)
+        completionItem.detail = item.detail
+        completionItem.insertText = new vscode.SnippetString(item.insertText)
+        const doc = new vscode.MarkdownString()
         for (const i of item.documentation) {
           switch (i.add) {
             case 'markdown':
-              doc.appendMarkdown(i.value);
-              break;
+              doc.appendMarkdown(i.value)
+              break
             case 'code':
-              doc.appendCodeblock(i.value, 'typescript');
-              break;
+              doc.appendCodeblock(i.value, 'typescript')
+              break
             default:
-              doc.appendText(i.value);
-              break;
+              doc.appendText(i.value)
+              break
           }
         }
-        completionItem.documentation = doc;
-        return completionItem;
-      });
+        completionItem.documentation = doc
+        return completionItem
+      })
 
-      return list;
+      return list
     }
   }
-);
+)
 
-export default codeSnippetsCompletionProvider;
+export default codeSnippetsCompletionProvider
