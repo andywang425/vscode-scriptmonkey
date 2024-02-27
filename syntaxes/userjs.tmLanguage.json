@@ -33,7 +33,7 @@
                     "name": "entity.name.function.js"
                 },
                 "2": {
-                    "name": "meta.brace.round.js" 
+                    "name": "meta.brace.round.js"
                 }
             },
             "endCaptures": {
@@ -147,6 +147,25 @@
                         },
                         "3": {
                             "name": "entity.name.type.jsdoc"
+                        }
+                    }
+                },
+                {
+                    "match": "^//\\s*(@webRequest)\\s+(.*)",
+                    "captures": {
+                        "0": {
+                            "name": "comment.block.documentation.js"
+                        },
+                        "1": {
+                            "name": "storage.type.class.jsdoc"
+                        },
+                        "2": {
+                            "name": "variable.other.jsdoc",
+                            "patterns": [
+                                {
+                                    "include": "source.json"
+                                }
+                            ]
                         }
                     }
                 },

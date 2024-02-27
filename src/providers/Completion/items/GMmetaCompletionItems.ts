@@ -407,6 +407,18 @@ const GMmetaCompletionItems: CompletionItem[] = [
       }
     ],
     insertText: new vscode.SnippetString('nocompat Chrome')
+  },
+  {
+    label: 'webRequest',
+    kind: vscode.CompletionItemKind.Snippet,
+    documentation: [
+      {
+        add: 'markdown',
+        value:
+          "`@webRequest` takes a JSON document that matches `GM_webRequest`'s rule parameter. It allows the rules to apply even before the userscript is loaded."
+      }
+    ],
+    insertText: new vscode.SnippetString('webRequest { "selector": $1, "action": $2 }')
   }
 ]
 

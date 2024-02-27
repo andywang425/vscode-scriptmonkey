@@ -17,6 +17,7 @@ const GMmetaCompletionProvider = vscode.languages.registerCompletionItemProvider
       }
       const list: vscode.CompletionItem[] = GMmetaCompletionItems.map((item) => {
         const completionItem = new vscode.CompletionItem('@' + item.label, item.kind)
+        completionItem.sortText = completionItem.filterText = item.label
         completionItem.detail = 'GM Metadata'
         completionItem.insertText = item.insertText ?? item.label + ' '
         const doc = buildMarkdownString(item)

@@ -13,10 +13,10 @@ const GMdotAPIsHoverProvider = vscode.languages.registerHoverProvider('javascrip
       return
     }
     const linePrefix = document.lineAt(position).text.substring(0, position.character)
-    const word = document.getText(document.getWordRangeAtPosition(position))
     if (!linePrefix.includes('GM.')) {
       return undefined
     }
+    const word = document.getText(document.getWordRangeAtPosition(position))
     const hoverItem = GMdotAPIsHoverItems.find((i) => i.word === word)
     if (hoverItem) {
       const markdownString = buildMarkdownString(hoverItem)
