@@ -1,6 +1,7 @@
 import * as vscode from 'vscode'
 import GMmetaCompletionItems from './items/GMmetaCompletionItems'
-import checkIfShouldRun from '../../other/checkIfShouldRun'
+import checkIfShouldRun from '../../utils/checkIfShouldRun'
+import buildMarkdownString from '../../utils/buildMarkdownString'
 
 const GMmetaCompletionProvider = vscode.languages.registerCompletionItemProvider(
   'javascript',
@@ -18,20 +19,7 @@ const GMmetaCompletionProvider = vscode.languages.registerCompletionItemProvider
         const completionItem = new vscode.CompletionItem('@' + item.label, item.kind)
         completionItem.detail = 'GM Metadata'
         completionItem.insertText = item.insertText ?? item.label + ' '
-        const doc = new vscode.MarkdownString()
-        for (const i of item.documentation) {
-          switch (i.add) {
-            case 'markdown':
-              doc.appendMarkdown(i.value)
-              break
-            case 'code':
-              doc.appendCodeblock(i.value, 'typescript')
-              break
-            default:
-              doc.appendText(i.value)
-              break
-          }
-        }
+        const doc = buildMarkdownString(item)
         completionItem.documentation = doc
         return completionItem
       })

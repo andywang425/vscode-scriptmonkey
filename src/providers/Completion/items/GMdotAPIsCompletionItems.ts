@@ -1,6 +1,7 @@
 import * as vscode from 'vscode'
+import { CompletionItem } from './types'
 
-const GMdotAPIsCompletionItems = [
+const GMdotAPIsCompletionItems: CompletionItem[] = [
   {
     label: 'addStyle',
     kind: vscode.CompletionItemKind.Method,

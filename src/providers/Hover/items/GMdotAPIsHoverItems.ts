@@ -1,4 +1,6 @@
-const GMdotAPIsHoverItems = [
+import { HoverItem } from './types'
+
+const GMdotAPIsHoverItems: HoverItem[] = [
   {
     word: 'addStyle',
     contents: [

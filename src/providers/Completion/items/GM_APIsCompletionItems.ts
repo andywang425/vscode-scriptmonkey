@@ -1,6 +1,7 @@
 import * as vscode from 'vscode'
+import { CompletionItem } from './types'
 
-const GM_APIsCompletionItems = [
+const GM_APIsCompletionItems: CompletionItem[] = [
   {
     label: 'GM_info',
     kind: vscode.CompletionItemKind.Constant,

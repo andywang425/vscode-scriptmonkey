@@ -1,6 +1,7 @@
 import * as vscode from 'vscode'
+import { CompletionItem } from './types'
 
-const GMmetaCompletionItems = [
+const GMmetaCompletionItems: CompletionItem[] = [
   {
     label: 'name',
     kind: vscode.CompletionItemKind.Snippet,

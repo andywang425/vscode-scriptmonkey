@@ -1,4 +1,6 @@
-const GMotherHoverItems = [
+import { HoverItem } from './types'
+
+const GMotherHoverItems: HoverItem[] = [
   {
     word: 'unsafeWindow',
     contents: [

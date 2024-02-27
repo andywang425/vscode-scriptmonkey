@@ -1,6 +1,7 @@
 import * as vscode from 'vscode'
+import { CompletionItem } from './types'
 
-const GMotherCompletionItems = [
+const GMotherCompletionItems: CompletionItem[] = [
   {
     label: 'unsafeWindow',
     kind: vscode.CompletionItemKind.Variable,

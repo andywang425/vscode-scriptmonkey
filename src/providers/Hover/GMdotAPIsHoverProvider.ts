@@ -1,6 +1,7 @@
 import * as vscode from 'vscode'
 import GMdotAPIsHoverItems from './items/GMdotAPIsHoverItems'
-import checkIfShouldRun from '../../other/checkIfShouldRun'
+import checkIfShouldRun from '../../utils/checkIfShouldRun'
+import buildMarkdownString from '../../utils/buildMarkdownString'
 
 const GMdotAPIsHoverProvider = vscode.languages.registerHoverProvider('javascript', {
   provideHover(
@@ -18,20 +19,7 @@ const GMdotAPIsHoverProvider = vscode.languages.registerHoverProvider('javascrip
     }
     const hoverItem = GMdotAPIsHoverItems.find((i) => i.word === word)
     if (hoverItem) {
-      const markdownString = new vscode.MarkdownString()
-      for (const i of hoverItem.contents) {
-        switch (i.add) {
-          case 'code':
-            markdownString.appendCodeblock(i.value, 'typescript')
-            break
-          case 'markdown':
-            markdownString.appendMarkdown(i.value)
-            break
-          default:
-            markdownString.appendText(i.value)
-            break
-        }
-      }
+      const markdownString = buildMarkdownString(hoverItem)
       return new vscode.Hover(markdownString)
     }
   }

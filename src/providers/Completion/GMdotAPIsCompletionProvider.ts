@@ -1,6 +1,7 @@
 import * as vscode from 'vscode'
 import GMdotAPIsCompletionItems from './items/GMdotAPIsCompletionItems'
-import checkIfShouldRun from '../../other/checkIfShouldRun'
+import checkIfShouldRun from '../../utils/checkIfShouldRun'
+import buildMarkdownString from '../../utils/buildMarkdownString'
 
 const GMdotAPIsCompletionProvider = vscode.languages.registerCompletionItemProvider(
   'javascript',
@@ -21,20 +22,7 @@ const GMdotAPIsCompletionProvider = vscode.languages.registerCompletionItemProvi
       const list: vscode.CompletionItem[] = GMdotAPIsCompletionItems.map((item) => {
         const completionItem = new vscode.CompletionItem(item.label, item.kind)
         completionItem.detail = 'GM.* APIs'
-        const doc = new vscode.MarkdownString()
-        for (const i of item.documentation) {
-          switch (i.add) {
-            case 'markdown':
-              doc.appendMarkdown(i.value)
-              break
-            case 'code':
-              doc.appendCodeblock(i.value, 'typescript')
-              break
-            default:
-              doc.appendText(i.value)
-              break
-          }
-        }
+        const doc = buildMarkdownString(item)
         completionItem.documentation = doc
         return completionItem
       })

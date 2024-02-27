@@ -1,12 +1,9 @@
-const GM_APIsHoverItems = [
+import { HoverItem } from './types'
+
+const GM_APIsHoverItems: HoverItem[] = [
   {
     word: 'GM_info',
     contents: [
-      {
-        add: 'code',
-        value:
-          'const GM_info: {\n\tdownloadMode?: string,\n\tisIncognito?: boolean,\n\tinjectInto?: string,\n\tplatform?: {\n\t\tarch: string,\n\t\tbrowserName: string,\n\t\tbrowserVersion: string,\n\t\tos: string\n\t},\n\tscriptHandler: string,\n\tscriptMetaStr: string,\n\tscriptSource?: string,\n\tscriptUpdateURL?: string | null,\n\tscriptWillUpdate: boolean,\n\tuuid?: string,\n\ttoString?: () => string,\n\tversion: string,\n\tscript: {\n\t\tauthor: string,\n\t\tantifeatures?: {\n\t\t\tads?: {\n\t\t\t\tdefault: string\n\t\t\t},\n\t\t\ttracking?: {\n\t\t\t\tdefault: string\n\t\t\t},\n\t\t\tminer?: {\n\t\t\t\tdefault: string\n\t\t\t}\n\t\t}\n\t\tdescription: string,\n\t\tdescription_i18n?: {\n\t\t\t[key: string]?: string, ...\n\t\t},\n\t\toptions?: {\n\t\t\tcheck_for_updates: boolean,\n\t\t\tcomment: string | null,\n\t\t\tcompat_foreach: boolean,\n\t\t\tcompat_metadata: boolean,\n\t\t\tcompat_powerful_this: boolean,\n\t\t\tcompat_prototypes: boolean,\n\t\t\tcompat_wrappedjsobject: boolean,\n\t\t\tcompatopts_for_requires: boolean,\n\t\t\tnoframes: boolean | null,\n\t\t\toverride: {\n\t\t\t\tmerge_connects: boolean,\n\t\t\t\tmerge_excludes: boolean,\n\t\t\t\tmerge_includes: boolean,\n\t\t\t\tmerge_matches: boolean,\n\t\t\t\torig_connects: string[],\n\t\t\t\torig_excludes: string[],\n\t\t\t\torig_includes: string[],\n\t\t\t\torig_matches: string[],\n\t\t\t\torig_noframes: boolean | null,\n\t\t\t\torig_run_at: string,\n\t\t\t\tuse_blockers: string[],\n\t\t\t\tuse_connects: string[],\n\t\t\t\tuse_excludes: string[],\n\t\t\t\tuse_includes: string[],\n\t\t\t\tuse_matches: string[]\n\t\t\t}\n\t\t\trun_at: string,\n\t\t\ttab_types: string | null,\n\t\t\tunwrap: boolean | null,\n\t\t},\n\t\texcludeMatches?: string[],\n\t\texcludes: string[],\n\t\tgrant: string[],\n\t\ticon: string | null,\n\t\ticon64?: string | null,\n\t\tdownloadURL?: string | null,\n\t\tevilness?: number,\n\t\tlastModified?: number,\n\t\tposition?: number,\n\t\tincludes: string[],\n\t\tmatches: string[],\n\t\tname: string,\n\t\tname_i18n: {\n\t\t\t[key: string]?: string\n\t\t},\n\t\tnamespace: string,\n\t\tnoframes?: boolean,\n\t\trequire?: string[],\n\t\trequires?: [\n\t\t\t{\n\t\t\t\ttextContent: string\n\t\t\t}, ...\n\t\t],\n\t\tresources: [\n\t\t\t{\n\t\t\t\tname: string,\n\t\t\t\turl: string,\n\t\t\t\tcontent?: string,\n\t\t\t\tmeta?: string\n\t\t\t}, ...\n\t\t],\n\t\trunAt?: string,\n\t\trun-at?: string,\n\t\tsupportURL?: string | null,\n\t\tunwrap: boolean,\n\t\tupdateURL?: string | null,\n\t\tuuid?: string,\n\t\tversion: string,\n\t\tsync?: {\n\t\t\timported: number\n\t\t}\n\t\twebRequest: Object | null,\n\t}\n}'
-      },
       {
         add: 'markdown',
         value: 'An object that exposes information about the current userscript.  \n'

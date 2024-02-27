@@ -1,6 +1,7 @@
 import * as vscode from 'vscode'
 import getCodeSnippets from './items/codeSnippetsCompletionItems'
-import checkIfShouldRun from '../../other/checkIfShouldRun'
+import checkIfShouldRun from '../../utils/checkIfShouldRun'
+import buildMarkdownString from '../../utils/buildMarkdownString'
 
 let codeSnippetsCompletionItems = getCodeSnippets()
 vscode.workspace.onDidChangeConfiguration((event) => {
@@ -24,21 +25,8 @@ const codeSnippetsCompletionProvider = vscode.languages.registerCompletionItemPr
       const list: vscode.CompletionItem[] = codeSnippetsCompletionItems.map((item) => {
         const completionItem = new vscode.CompletionItem(item.label, item.kind)
         completionItem.detail = item.detail
-        completionItem.insertText = new vscode.SnippetString(item.insertText)
-        const doc = new vscode.MarkdownString()
-        for (const i of item.documentation) {
-          switch (i.add) {
-            case 'markdown':
-              doc.appendMarkdown(i.value)
-              break
-            case 'code':
-              doc.appendCodeblock(i.value, 'typescript')
-              break
-            default:
-              doc.appendText(i.value)
-              break
-          }
-        }
+        completionItem.insertText = item.insertText
+        const doc = buildMarkdownString(item)
         completionItem.documentation = doc
         return completionItem
       })

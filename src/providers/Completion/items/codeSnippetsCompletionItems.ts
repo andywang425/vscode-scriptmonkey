@@ -1,4 +1,5 @@
 import * as vscode from 'vscode'
+import { CompletionItem } from './types'
 
 const getCodeSnippets = () => {
   const config = vscode.workspace.getConfiguration('scriptmonkey.metaData.default')
@@ -13,7 +14,7 @@ const getCodeSnippets = () => {
     {
       label: 'userscript',
       kind: vscode.CompletionItemKind.Snippet,
-      insertText: `\/\/ ==UserScript==
+      insertText: new vscode.SnippetString(`\/\/ ==UserScript==
 \/\/ @name         \${1:Script name}
 \/\/ @namespace    \${2:${metaDataDefault.namespace}}
 \/\/ @version      \${3:0.1}
@@ -27,7 +28,7 @@ const getCodeSnippets = () => {
 (function () {
     'use strict';
     $0
-})();`,
+})();`),
       detail: 'userscript',
       documentation: [
         {
@@ -36,7 +37,7 @@ const getCodeSnippets = () => {
         }
       ]
     }
-  ]
+  ] as CompletionItem[]
 }
 
 export default getCodeSnippets

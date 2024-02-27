@@ -1,6 +1,7 @@
 import * as vscode from 'vscode'
 import GMotherCompletionItems from './items/GMotherCompletionItems'
-import checkIfShouldRun from '../../other/checkIfShouldRun'
+import checkIfShouldRun from '../../utils/checkIfShouldRun'
+import buildMarkdownString from '../../utils/buildMarkdownString'
 
 const GMotherCompletionProvider = vscode.languages.registerCompletionItemProvider('javascript', {
   provideCompletionItems(
@@ -16,20 +17,7 @@ const GMotherCompletionProvider = vscode.languages.registerCompletionItemProvide
       const completionItem = new vscode.CompletionItem(item.label, item.kind)
       completionItem.detail = item.detail
       completionItem.commitCharacters = item.commitCharacters
-      const doc = new vscode.MarkdownString()
-      for (const i of item.documentation) {
-        switch (i.add) {
-          case 'markdown':
-            doc.appendMarkdown(i.value)
-            break
-          case 'code':
-            doc.appendCodeblock(i.value, 'typescript')
-            break
-          default:
-            doc.appendText(i.value)
-            break
-        }
-      }
+      const doc = buildMarkdownString(item)
       completionItem.documentation = doc
       return completionItem
     })
