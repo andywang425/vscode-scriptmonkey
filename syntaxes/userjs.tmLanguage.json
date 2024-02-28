@@ -210,6 +210,26 @@
                     }
                 },
                 {
+                    "match": "^//\\s*(@sandbox)\\s+(.*)",
+                    "captures": {
+                        "0": {
+                            "name": "comment.block.documentation.js"
+                        },
+                        "1": {
+                            "name": "storage.type.class.jsdoc"
+                        },
+                        "2": {
+                            "name": "comment.block.documentation.js",
+                            "patterns": [
+                                {
+                                    "match": "\\b(?:raw|JavaScript|DOM)\\s*$",
+                                    "name": "constant.language.symbol-type.jsdoc"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
                     "match": "^//\\s*(@inject-into)\\s+(.*)",
                     "captures": {
                         "0": {

@@ -419,6 +419,42 @@ const GMmetaCompletionItems: CompletionItem[] = [
       }
     ],
     insertText: new vscode.SnippetString('webRequest { "selector": $1, "action": $2 }')
+  },
+  {
+    label: 'sandbox',
+    kind: vscode.CompletionItemKind.Snippet,
+    documentation: [
+      {
+        add: 'markdown',
+        value: '`@sandbox` allows Tampermonkey to decide where the userscript is injected:'
+      },
+      {
+        add: 'markdown',
+        value:
+          "\n- `MAIN_WORLD` - the page\n- `ISOLATED_WORLD` - the extension's content script\n- `USERSCRIPT_WORLD` - a special context created for userscripts\n"
+      },
+      {
+        add: 'markdown',
+        value:
+          '\nBut instead of specifying an environment, the userscript can express what exactly it needs access to. `@sandbox` supports three possible arguments:\n'
+      },
+      {
+        add: 'markdown',
+        value:
+          '\n- `raw` "Raw" access means that a script for compatibility reasons always needs to run in page context, the `MAIN_WORLD`. At the moment this mode is the default if `@sandbox` is omitted. If injection into the `MAIN_WORLD` is not possible (e.g. because of a CSP) the userscript will be injected into other (enabled) sandboxes according to the order of this list.\n'
+      },
+      {
+        add: 'markdown',
+        value:
+          '\n- `JavaScript` "JavaScript" access mode means that this script needs access to `unsafeWindow`. At Firefox a special context, the `USERSCRIPT_WORLD`, is created which also bypasses existing CSPs. It however, might create new issues since now [`cloneInto` and `exportFunction`](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Sharing_objects_with_page_scripts) are necessary to share objects with the page. `raw` mode is used as fallback at other browsers.\n'
+      },
+      {
+        add: 'markdown',
+        value:
+          '\n- `DOM` Use this access mode if the script only needs DOM and no direct `unsafeWindow` access. If [enabled](https://www.tampermonkey.net/faq#Q404) these scripts are executed inside the extension context, the `ISOLATED_WORLD`, or at any other enabled context otherwise, because they all grant DOM access.\n'
+      }
+    ],
+    insertText: new vscode.SnippetString('sandbox ${1|raw,JavaScript,DOM|}')
   }
 ]
 
