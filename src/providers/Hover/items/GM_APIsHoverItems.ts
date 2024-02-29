@@ -227,7 +227,7 @@ const GM_APIsHoverItems: HoverItem[] = [
       {
         add: 'code',
         value:
-          'const responseObject: {\n\treadyState: number,\n\tstatus: number,\n\tstatusText: string,\n\tresponseText: string,\n\tresponseHeaders: string,\n\tresponseXML?: Document,\n\tresponse: string | Blob | ArrayBuffer | Document | Object | null,\n\tfinalUrl: string,\n\tcontext?: any\n}'
+          'const responseObject: {\n\treadyState: number,\n\tstatus: number,\n\tstatusText: string,\n\tresponseText: string,\n\tresponseHeaders: string,\n\tresponseXML?: Document,\n\tresponse: string | Blob | ArrayBuffer | Document | object | null,\n\tfinalUrl: string,\n\tcontext?: any\n}'
       },
       {
         add: 'markdown',
@@ -254,7 +254,7 @@ const GM_APIsHoverItems: HoverItem[] = [
       {
         add: 'code',
         value:
-          'function GM_download(options: {\n\turl: string,\n\tname: string,\n\theaders?: Object,\n\tsaveAs?: boolean,\n\ttimeout?: number,\n\tonerror?: () => { error: string, details: string },\n\tonload?: () => void,\n\tonprogress?: () => void,\n\tontimeout?: () => void\n}): void\n'
+          'function GM_download(options: {\n\turl: string,\n\tname: string,\n\theaders?: object,\n\tsaveAs?: boolean,\n\ttimeout?: number,\n\tonerror?: () => { error: string, details: string },\n\tonload?: () => void,\n\tonprogress?: () => void,\n\tontimeout?: () => void\n}): void\n'
       },
       {
         add: 'markdown',
@@ -267,7 +267,7 @@ const GM_APIsHoverItems: HoverItem[] = [
     contents: [
       {
         add: 'code',
-        value: 'function GM_getTab(callback: () => Object): void'
+        value: 'function GM_getTab(callback: () => object): void'
       },
       {
         add: 'markdown',
@@ -280,7 +280,7 @@ const GM_APIsHoverItems: HoverItem[] = [
     contents: [
       {
         add: 'code',
-        value: 'function GM_saveTab(tab: Object): void'
+        value: 'function GM_saveTab(tab: object): void'
       },
       {
         add: 'markdown',
@@ -293,7 +293,7 @@ const GM_APIsHoverItems: HoverItem[] = [
     contents: [
       {
         add: 'code',
-        value: 'function GM_getTabs(callback: () => { [key: number]: Object }): void'
+        value: 'function GM_getTabs(callback: () => { [key: number]: object }): void'
       },
       {
         add: 'markdown',
@@ -339,6 +339,21 @@ const GM_APIsHoverItems: HoverItem[] = [
       {
         add: 'markdown',
         value: 'Sets data to system clipboard.'
+      }
+    ]
+  },
+  {
+    word: 'GM_webRequest',
+    contents: [
+      {
+        add: 'code',
+        value:
+          'function GM_webRequest(rules: { selector: string| object, action: string | object } , listener: (info: "cancel" | "redirect", message: "ok" | "error", details: { rule: object, url: string, redirect_url: string, description: string }) => void): void'
+      },
+      {
+        add: 'markdown',
+        value:
+          "`GM_webRequest` (re-)registers rules for web request manipulations and the listener of triggered rules. If you need to just register rules it's better to use `@webRequest` header. Note, webRequest proceeds only requests with types `sub_frame`, `script`, `xhr` and `websocket`."
       }
     ]
   }

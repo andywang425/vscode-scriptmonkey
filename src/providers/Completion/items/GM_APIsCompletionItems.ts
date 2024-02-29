@@ -225,6 +225,17 @@ const GM_APIsCompletionItems: CompletionItem[] = [
         value: 'Sets data to system clipboard.'
       }
     ]
+  },
+  {
+    label: 'GM_webRequest',
+    kind: vscode.CompletionItemKind.Function,
+    documentation: [
+      {
+        add: 'markdown',
+        value:
+          "`GM_webRequest` (re-)registers rules for web request manipulations and the listener of triggered rules. If you need to just register rules it's better to use `@webRequest` header. Note, webRequest proceeds only requests with types `sub_frame`, `script`, `xhr` and `websocket`."
+      }
+    ]
   }
 ]
 
