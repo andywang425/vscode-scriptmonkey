@@ -2,6 +2,7 @@ import * as vscode from 'vscode'
 import GM_APIsCompletionItems from './items/GM_APIsCompletionItems'
 import checkIfShouldRun from '../../utils/checkIfShouldRun'
 import buildMarkdownString from '../../utils/buildMarkdownString'
+import { getWord } from '../../utils/tools'
 
 const GM_APIsCompletionProvider = vscode.languages.registerCompletionItemProvider('javascript', {
   provideCompletionItems(
@@ -13,7 +14,7 @@ const GM_APIsCompletionProvider = vscode.languages.registerCompletionItemProvide
     if (!checkIfShouldRun(document)) {
       return
     }
-    const word = document.getText(document.getWordRangeAtPosition(position))
+    const word = getWord(document, position)
     if (document.lineAt(position).text.endsWith('.' + word)) {
       return undefined
     }

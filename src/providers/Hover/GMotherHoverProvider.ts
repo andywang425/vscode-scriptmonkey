@@ -2,6 +2,7 @@ import * as vscode from 'vscode'
 import GMotherHoverItems from './items/GMotherHoverItems'
 import checkIfShouldRun from '../../utils/checkIfShouldRun'
 import buildMarkdownString from '../../utils/buildMarkdownString'
+import { getWord } from '../../utils/tools'
 
 const GMotherHoverProvider = vscode.languages.registerHoverProvider('javascript', {
   provideHover(
@@ -12,7 +13,7 @@ const GMotherHoverProvider = vscode.languages.registerHoverProvider('javascript'
     if (!checkIfShouldRun(document)) {
       return
     }
-    const word = document.getText(document.getWordRangeAtPosition(position))
+    const word = getWord(document, position)
     const hoverItem = GMotherHoverItems.find((i) => i.word === word)
     if (hoverItem) {
       const markdownString = buildMarkdownString(hoverItem)
