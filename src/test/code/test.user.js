@@ -29,7 +29,6 @@
         z-index: 1001;
         overflow: hidden
     }`)
-
   //css-end
   alert()
   function test(a) {
@@ -39,4 +38,22 @@
     '123\
     '
   )
+
+  GM.GM_addValueChangeListener()
+
+  GM.setClipboard()
+  GM.info
+
+  GM.setClipboard()
+
+  GM.setClipboard()
+  GM.setClipboard()
+
+  GM.info
+
+  GM_xmlhttpRequest
+
+  GM.xmlHttpRequest
+
+  GM.xmlhttpRequest
 })()

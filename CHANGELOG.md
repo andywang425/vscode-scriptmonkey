@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Refactoring the entire project.
+
+### Fixed
+
+- Metadata autocomplete labels are missing `@` symbol.
+
 ## [0.0.8] - 2023-8-12
 
 ### Added

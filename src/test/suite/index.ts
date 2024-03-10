@@ -4,7 +4,7 @@ import { globSync } from 'glob'
 
 export function run(): Promise<void> {
   // Create the mocha test
-  const mocha = new Mocha({
+  const mocha = new Mocha.default({
     ui: 'tdd',
     color: true
   })

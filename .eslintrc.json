@@ -11,9 +11,9 @@
       "warn",
       {
         "selector": "default",
-        "format": ["camelCase", "PascalCase"],
+        "format": ["camelCase", "PascalCase", "snake_case", "UPPER_CASE"],
         "filter": {
-          "regex": "^GM_",
+          "regex": "^(GM_)|(_)",
           "match": false
         }
       }

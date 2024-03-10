@@ -1,12 +1,11 @@
 import * as vscode from 'vscode'
-import { CompletionItem } from '../providers/Completion/items/types'
-import { HoverItem } from '../providers/Hover/items/types'
+import { GMItem } from '../items/types'
 
-function isCompletionItem(item: any): item is CompletionItem {
-  return (item as CompletionItem).documentation !== undefined
-}
+// function isCompletionItem(item: any): item is CompletionItem {
+//   return (item as CompletionItem).documentation !== undefined
+// }
 
-function appendContentToMarkdownString(markdownString: vscode.MarkdownString, content: any) {
+function appendContentToMarkdownString(markdownString: vscode.MarkdownString, content: any): void {
   switch (content.add) {
     case 'code':
       markdownString.appendCodeblock(content.value, 'typescript')
@@ -20,15 +19,11 @@ function appendContentToMarkdownString(markdownString: vscode.MarkdownString, co
   }
 }
 
-function buildMarkdownString(item: CompletionItem | HoverItem) {
+function buildMarkdownString(item: GMItem): vscode.MarkdownString {
   const markdownString = new vscode.MarkdownString()
 
-  if (isCompletionItem(item)) {
+  if (item.documentation) {
     for (const content of item.documentation) {
-      appendContentToMarkdownString(markdownString, content)
-    }
-  } else {
-    for (const content of item.contents) {
       appendContentToMarkdownString(markdownString, content)
     }
   }
