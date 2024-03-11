@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- Support more matadata and GM APIs.
+
 ### Changed
 
 - Refactoring the entire project.

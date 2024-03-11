@@ -16,7 +16,7 @@ const items: GMItem[] = [
   },
   {
     label: 'GM',
-    kind: vscode.CompletionItemKind.Variable,
+    kind: vscode.CompletionItemKind.Constant,
     detail: 'GM object',
     commitCharacter: '.',
     documentation: [
@@ -29,7 +29,7 @@ const items: GMItem[] = [
       {
         label: 'info',
         kind: vscode.CompletionItemKind.Constant,
-        detail: 'GM API',
+        detail: 'GM Object',
         documentation: [
           {
             add: 'markdown',
@@ -280,6 +280,60 @@ const items: GMItem[] = [
             add: 'markdown',
             value:
               "`GM_webRequest` (re-)registers rules for web request manipulations and the listener of triggered rules. If you need to just register rules it's better to use `@webRequest` header. Note, webRequest proceeds only requests with types `sub_frame`, `script`, `xhr` and `websocket`."
+          }
+        ]
+      },
+      {
+        label: 'cookie',
+        kind: vscode.CompletionItemKind.Constant,
+        detail: 'GM Object',
+        documentation: [
+          {
+            add: 'markdown',
+            value:
+              'Note: the GM_cookie API is experimental and might return a `not supported` error at some Tampermonkey versions.\n\n'
+          },
+          {
+            add: 'markdown',
+            value:
+              'Tampermonkey checks if the script has `@include` or `@match` access to given `details.url` arguments!'
+          }
+        ],
+        commitCharacter: '.',
+        subItems: [
+          {
+            label: 'list',
+            kind: vscode.CompletionItemKind.Function,
+            detail: 'GM API',
+            documentation: [
+              {
+                add: 'markdown',
+                value: 'Retrieve cookies.'
+              }
+            ]
+          },
+          {
+            label: 'set',
+            kind: vscode.CompletionItemKind.Function,
+            detail: 'GM API',
+            documentation: [
+              {
+                add: 'markdown',
+                value:
+                  'Sets a cookie with the given details. Supported properties are defined [here](https://developer.chrome.com/extensions/cookies#method-set).'
+              }
+            ]
+          },
+          {
+            label: 'delete',
+            kind: vscode.CompletionItemKind.Function,
+            detail: 'GM API',
+            documentation: [
+              {
+                add: 'markdown',
+                value: 'Deletes a cookie.'
+              }
+            ]
           }
         ]
       }

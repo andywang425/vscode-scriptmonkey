@@ -39,8 +39,6 @@
     '
   )
 
-  GM.GM_addValueChangeListener()
-
   GM.setClipboard()
   GM.info
 

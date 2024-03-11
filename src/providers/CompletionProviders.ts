@@ -3,6 +3,7 @@ import allItems from '../items'
 import checkIfShouldRun from '../utils/checkIfShouldRun'
 import buildMarkdownString from '../utils/buildMarkdownString'
 import { GMItem } from '../items/types'
+import getWord from '../utils/getWord'
 
 const completionProviders: vscode.Disposable[] = []
 
@@ -42,20 +43,17 @@ function makeCompletionItem(
 
   if (prefix === '@') {
     // For GM metadata, we need to adjust the range to include the prefix `@` since it's commitCharacter
-    const startPosition = new vscode.Position(position.line, position.character - 1)
-    const endPosition = new vscode.Position(
-      position.line,
-      position.character + item.label!.length - 1
-    )
+    const startPosition = position.with(undefined, position.character - 1)
+    const endPosition = position.with(undefined, position.character + item.label!.length - 1)
     completionItem.range = new vscode.Range(startPosition, endPosition)
   }
 
-  if (prefix === 'GM.') {
-    // For GM_xxx functions, we need to adjust the range to include the prefix `.` since it's commitCharacter
-    const startPosition = new vscode.Position(position.line, position.character - 1)
-    const endPosition = new vscode.Position(position.line, position.character + item.label!.length)
+  if (prefix?.endsWith('.')) {
+    // For GM.xxx functions, we need to adjust the range to include the prefix `.` since it's commitCharacter
+    const startPosition = position.with(undefined, position.character - 1)
+    const endPosition = position.with(undefined, position.character + item.label!.length)
     completionItem.range = new vscode.Range(startPosition, endPosition)
-    // By setting `range`, `filterText` and `sortText`, ensuring the item appears at the top of the completion results
+    // By setting `range` and `filterText`, ensuring the item appears at the top of the completion results
     completionItem.filterText = `.${label}`
   }
 
@@ -66,11 +64,11 @@ function makeCompletionItem(
     completionItem.insertText = new vscode.SnippetString(item.insertText)
     if (prefix === '@') {
       completionItem.insertText.value = `@${completionItem.insertText.value}`
-    } else if (prefix === 'GM.') {
+    } else if (prefix?.endsWith('.')) {
       completionItem.insertText.value = `.${completionItem.insertText.value}`
     }
   } else {
-    if (prefix === 'GM.') {
+    if (prefix?.endsWith('.')) {
       completionItem.insertText = `.${label}`
     }
   }
@@ -100,18 +98,41 @@ function createCompletionItemProvider(items: GMItem[], prefix?: string, commitCh
           return
         }
 
-        const linePrefix = document.lineAt(position).text.substring(0, position.character)
+        let matched_prefix = false
+        let prefix_words = ''
+        let prefix_word_position = position
 
-        if (prefix && !linePrefix.endsWith(prefix)) {
-          return
+        if (prefix?.endsWith('.')) {
+          for (let i = 0; i < Number(process.env.GM_ITEMS_DEPTH) - 1; i++) {
+            const wordAndPosition = getWord(document, prefix_word_position, false)
+            if (wordAndPosition) {
+              let [word, pos] = wordAndPosition
+
+              if (word.startsWith('GM_')) {
+                word = `GM.${word.substring(3)}`
+                i++
+              }
+
+              prefix_words = `${word}.` + prefix_words
+
+              if (prefix_words === prefix) {
+                matched_prefix = true
+                break
+              } else {
+                prefix_word_position = pos
+              }
+            }
+          }
+
+          if (!matched_prefix) {
+            return
+          }
         }
 
         const list = []
 
         for (const item of items) {
           if (item.label && item.kind) {
-            // const r = document.getWordRangeAtPosition(position)
-            // const nr = new vscode.Range(new vscode.Position(r!.start.line, r!.start.character-1), r!.end)
             list.push(makeCompletionItem(item, prefix, false, position))
 
             if (item.label === 'GM') {

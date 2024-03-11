@@ -14,7 +14,7 @@ export function run(): Promise<void> {
     importAll(require.context('..', true, /\.test$/))
 
     try {
-      console.log('a')
+      console.log('mocha test start')
       // Run the mocha test
       mocha.run((failures) => {
         if (failures > 0) {
