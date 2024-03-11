@@ -3,21 +3,16 @@ import * as vscode from 'vscode'
 interface GMItem {
   label?: string
   kind?: vscode.CompletionItemKind
-  documentation?: DocItem[]
-  typeDefinition?: TypeItem[]
+  documentation?: MarkDownItem[]
+  typeDefinition?: MarkDownItem[]
   insertText?: string
   detail?: string
   commitCharacter?: string
   subItems?: GMItem[]
 }
 
-interface DocItem {
-  add: 'markdown' | 'text'
-  value: string
-}
-
-interface TypeItem {
-  add: 'markdown' | 'code'
+interface MarkDownItem {
+  add: 'markdown' | 'code' | 'text'
   value: string
 }
 

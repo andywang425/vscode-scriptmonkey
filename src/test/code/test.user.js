@@ -8,7 +8,10 @@
 // @include      /121^$/
 // @match        *://*/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
-// @grant        none
+// @grant GM_xmlhttpRequest
+// @grant GM.xmlHttpRequest
+// @grant GM_xmlHttpRequest
+// @grant GM_xmlhttpRequest
 // ==/UserScript==
 
 ;(function () {
@@ -39,19 +42,5 @@
     '
   )
 
-  GM.setClipboard()
-  GM.info
 
-  GM.setClipboard()
-
-  GM.setClipboard()
-  GM.setClipboard()
-
-  GM.info
-
-  GM_xmlhttpRequest
-
-  GM.xmlHttpRequest
-
-  GM.xmlhttpRequest
 })()

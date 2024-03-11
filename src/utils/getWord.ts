@@ -3,9 +3,9 @@ import * as vscode from 'vscode'
 function findNextPosition(
   document: vscode.TextDocument,
   position: vscode.Position,
-  first: boolean
+  isInWord: boolean
 ): vscode.Position | undefined {
-  if (first) {
+  if (isInWord) {
     return position
   }
 
@@ -69,15 +69,15 @@ function findNextPosition(
  * - The third call returns `GM`
  * @param document vscode.TextDocument
  * @param position vscode.Position
- * @param first Is it the first search?
+ * @param isInWord Is position in a word?
  * @returns [word, next search's position]
  */
 function getWord(
   document: vscode.TextDocument,
   position: vscode.Position,
-  first: boolean
+  isInWord: boolean
 ): [string, vscode.Position] | undefined {
-  let newPosition: vscode.Position | undefined = findNextPosition(document, position, first)
+  let newPosition: vscode.Position | undefined = findNextPosition(document, position, isInWord)
 
   if (!newPosition) {
     return

@@ -1,6 +1,14 @@
 import * as vscode from 'vscode'
 import { GMItem } from './types'
 
+const config = vscode.workspace.getConfiguration('scriptmonkey.metaData.default')
+
+const metaDataDefault = {
+  author: config.get('author'),
+  namespace: config.get('namespace'),
+  icon: config.get('icon')
+}
+
 const items: GMItem[] = [
   {
     label: 'unsafeWindow',
@@ -707,7 +715,7 @@ const items: GMItem[] = [
           }
         ],
         insertText:
-          'grant ${1|none,unsafeWindow,window.close,window.focus,window.onurlchange,GM_info,GM_addStyle,GM_addElement,GM_deleteValue,GM_listValues,GM_addValueChangeListener,GM_removeValueChangeListener,GM_setValue,GM_getValue,GM_log,GM_getResourceText,GM_getResourceURL,GM_registerMenuCommand,GM_unregisterMenuCommand,GM_openInTab,GM_xmlhttpRequest,GM_download,GM_getTab,GM_saveTab,GM_getTabs,GM_notification,GM_setClipboard,GM.addStyle,GM.addElement,GM.registerMenuCommand,GM.deleteValue,GM.getResourceURL,GM.getValue,GM.info,GM.listValues,GM.notification,GM.openInTab,GM.setClipboard,GM.setValue,GM.xmlHttpRequest|}'
+          'grant ${1|none,unsafeWindow,window.onurlchange,window.close,window.focus,GM_addElement,GM.addElement,GM_addStyle,GM.addStyle,GM_download,GM.download,GM_getResourceText,GM.getResourceText,GM_getResourceURL,GM.getResourceURL,GM_info,GM.info,GM_log,GM.log,GM_notification,GM.notification,GM_openInTab,GM.openInTab,GM_registerMenuCommand,GM.registerMenuCommand,GM_unregisterMenuCommand,GM.unregisterMenuCommand,GM_setClipboard,GM.setClipboard,GM_getTab,GM.getTab,GM_saveTab,GM.saveTab,GM_getTabs,GM.getTabs,GM_setValue,GM.setValue,GM_getValue,GM.getValue,GM_deleteValue,GM.deleteValue,GM_listValues,GM.listValues,GM_addValueChangeListener,GM.addValueChangeListener,GM_removeValueChangeListener,GM.removeValueChangeListener,GM_xmlhttpRequest,GM.xmlHttpRequest,GM_webRequest,GM.webRequest,GM_cookie,GM.cookie|}'
       },
       {
         label: 'antifeature',
@@ -832,6 +840,32 @@ const items: GMItem[] = [
           }
         ],
         insertText: 'sandbox ${1|raw,JavaScript,DOM|}'
+      }
+    ]
+  },
+  {
+    label: 'userscript',
+    kind: vscode.CompletionItemKind.Snippet,
+    insertText: `\/\/ ==UserScript==
+\/\/ @name         \${1:Script name}
+\/\/ @namespace    \${2:${metaDataDefault.namespace}}
+\/\/ @version      \${3:0.1}
+\/\/ @description  \${4:A brief summary to describe the script}
+\/\/ @author       \${5:${metaDataDefault.author}}
+\/\/ @match        \${6:*://*/*}
+\/\/ @icon         \${7:${metaDataDefault.icon}}
+\/\/ @grant        \${8:none}
+\/\/ ==/UserScript==
+
+(function () {
+  'use strict';
+  $0
+})();`,
+    detail: 'userscript',
+    documentation: [
+      {
+        add: 'text',
+        value: 'Create a new userscript'
       }
     ]
   }

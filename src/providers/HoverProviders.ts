@@ -13,19 +13,21 @@ function makeHoverObject(
   position: vscode.Position,
   word_list: string[],
   items: GMItem[],
-  first: boolean
+  isInWord: boolean
 ): vscode.Hover | vscode.Position | undefined {
-  const wordAndPosition = getWord(document, position, first)
+  const wordAndPosition = getWord(document, position, isInWord)
   if (wordAndPosition) {
     let [word, next_position] = wordAndPosition
-    if (first && word.startsWith('GM_')) {
-      // If it's a GM_ function, make the hover object from GM.xxx
+    if (isInWord && word.startsWith('GM_')) {
       word = word.substring(3)
+      // Compatible for GM.xmlHttpRequest and GM_xmlhttpRequest
       if (word === 'xmlhttpRequest') {
-        // Compatible for GM.xmlHttpRequest and GM_xmlhttpRequest
         word = 'xmlHttpRequest'
+      } else if (word === 'xmlHttpRequest') {
+        return
       }
       word_list.unshift(word)
+      // If it's a GM_ function, make the hover object from GM.xxx
       word_list.unshift('GM')
     } else {
       word_list.unshift(word)

@@ -1,10 +1,6 @@
 import * as vscode from 'vscode'
 import { GMItem } from '../items/types'
 
-// function isCompletionItem(item: any): item is CompletionItem {
-//   return (item as CompletionItem).documentation !== undefined
-// }
-
 function appendContentToMarkdownString(markdownString: vscode.MarkdownString, content: any): void {
   switch (content.add) {
     case 'code':
