@@ -42,5 +42,6 @@
     '
   )
 
-
+    GM.addElement
+    GM_info
 })()

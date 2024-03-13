@@ -18,6 +18,12 @@ function appendContentToMarkdownString(markdownString: vscode.MarkdownString, co
 function buildMarkdownString(item: GMItem): vscode.MarkdownString {
   const markdownString = new vscode.MarkdownString()
 
+  if (item.typeDefinition) {
+    for (const content of item.typeDefinition) {
+      appendContentToMarkdownString(markdownString, content)
+    }
+  }
+
   if (item.documentation) {
     for (const content of item.documentation) {
       appendContentToMarkdownString(markdownString, content)
