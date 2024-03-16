@@ -223,6 +223,12 @@ GM_addElement(shadowDOM, 'style', {
             add: 'markdown',
             value: 'Deletes an existing key / value pair for current script from storage.'
           }
+        ],
+        typeDefinition: [
+          {
+            add: 'code',
+            value: 'function GM_deleteValue(key: string): void'
+          }
         ]
       },
       {
@@ -233,6 +239,12 @@ GM_addElement(shadowDOM, 'style', {
           {
             add: 'markdown',
             value: 'Returns an array of keys of all available values within this script.'
+          }
+        ],
+        typeDefinition: [
+          {
+            add: 'code',
+            value: 'function GM_listValues(): string[]'
           }
         ]
       },
@@ -245,6 +257,15 @@ GM_addElement(shadowDOM, 'style', {
             add: 'markdown',
             value: 'Adds a change listener to the storage and returns the listener ID.'
           }
+        ],
+        typeDefinition: [
+          {
+            add: 'code',
+            value: `function GM_addValueChangeListener(
+  key: string,
+  callback: (key: string, old_value: any, new_value: any, remote: boolean) => void
+): number`
+          }
         ]
       },
       {
@@ -255,6 +276,12 @@ GM_addElement(shadowDOM, 'style', {
           {
             add: 'markdown',
             value: 'Removes a change listener by its ID.'
+          }
+        ],
+        typeDefinition: [
+          {
+            add: 'code',
+            value: 'function GM_removeValueChangeListener(listenerId: number): void'
           }
         ]
       },
@@ -267,6 +294,12 @@ GM_addElement(shadowDOM, 'style', {
             add: 'markdown',
             value: 'Sets a key / value pair for current script to storage.'
           }
+        ],
+        typeDefinition: [
+          {
+            add: 'code',
+            value: 'function GM_setValue(key: string, value: any): void'
+          }
         ]
       },
       {
@@ -277,6 +310,12 @@ GM_addElement(shadowDOM, 'style', {
           {
             add: 'markdown',
             value: 'Retrieves a value for current script from storage.'
+          }
+        ],
+        typeDefinition: [
+          {
+            add: 'code',
+            value: 'function GM_getValue(key: string, defaultValue?: any): any'
           }
         ]
       },
@@ -289,6 +328,12 @@ GM_addElement(shadowDOM, 'style', {
             add: 'markdown',
             value: 'Log a message to the console.'
           }
+        ],
+        typeDefinition: [
+          {
+            add: 'code',
+            value: 'function GM_log(...message: any[]): void'
+          }
         ]
       },
       {
@@ -298,7 +343,14 @@ GM_addElement(shadowDOM, 'style', {
         documentation: [
           {
             add: 'markdown',
-            value: 'Get the content of a predefined @resource tag at the script header.'
+            value:
+              'Access the text of a resource (such as a JavaScript or CSS file) that has been included in a userscript via `@resource`.'
+          }
+        ],
+        typeDefinition: [
+          {
+            add: 'code',
+            value: 'function GM_getResourceText(name: string): string'
           }
         ]
       },
@@ -309,7 +361,14 @@ GM_addElement(shadowDOM, 'style', {
         documentation: [
           {
             add: 'markdown',
-            value: 'Get the base64 encoded URI of a predefined @resource tag at the script header.'
+            value:
+              'Access the URL of a resource (such as a CSS or image file) that has been included in the userscript via a `@resource` tag at the script header.'
+          }
+        ],
+        typeDefinition: [
+          {
+            add: 'code',
+            value: 'function GM_getResourceURL(name: string): string'
           }
         ]
       },
@@ -320,7 +379,34 @@ GM_addElement(shadowDOM, 'style', {
         documentation: [
           {
             add: 'markdown',
-            value: 'Registers a command in Violentmonkey popup menu.'
+            value: `Add a new entry to the userscript's menu in the browser, and specify a function to be called when the menu item is selected.\n\n`
+          },
+          {
+            add: 'markdown',
+            value: `The function return a menu entry ID that can be used to unregister the command.`
+          }
+        ],
+        typeDefinition: [
+          {
+            add: 'code',
+            value: `function GM_registerMenuCommand(
+  name: string,
+  callback: (event: MouseEvent | KeyboardEvent) => void,
+  accessKey_or_options: string | Options
+): number | string`
+          },
+          {
+            add: 'text',
+            value: '\n  '
+          },
+          {
+            add: 'code',
+            value: `type Options = {
+  id?: number | string
+  accessKey?: string
+  autoClose?: boolean
+  title?: string
+}`
           }
         ]
       },
@@ -334,6 +420,12 @@ GM_addElement(shadowDOM, 'style', {
             value:
               'Unregister a menu command that was previously registered by `GM_registerMenuCommand` with the given menu command ID.'
           }
+        ],
+        typeDefinition: [
+          {
+            add: 'code',
+            value: 'function GM_unregisterMenuCommand(menuCmdId: number | string): void'
+          }
         ]
       },
       {
@@ -344,6 +436,12 @@ GM_addElement(shadowDOM, 'style', {
           {
             add: 'markdown',
             value: 'Opens URL in a new tab.'
+          }
+        ],
+        typeDefinition: [
+          {
+            add: 'code',
+            value: ''
           }
         ]
       },
@@ -357,6 +455,12 @@ GM_addElement(shadowDOM, 'style', {
             value:
               'Makes a request like XMLHttpRequest, with some special capabilities, not restricted by same-origin policy.'
           }
+        ],
+        typeDefinition: [
+          {
+            add: 'code',
+            value: ''
+          }
         ]
       },
       {
@@ -367,6 +471,12 @@ GM_addElement(shadowDOM, 'style', {
           {
             add: 'markdown',
             value: 'Downloads a URL to a local file.'
+          }
+        ],
+        typeDefinition: [
+          {
+            add: 'code',
+            value: ''
           }
         ]
       },
@@ -379,6 +489,12 @@ GM_addElement(shadowDOM, 'style', {
             add: 'markdown',
             value: 'Get a object that is persistent as long as this tab is open.'
           }
+        ],
+        typeDefinition: [
+          {
+            add: 'code',
+            value: ''
+          }
         ]
       },
       {
@@ -389,6 +505,12 @@ GM_addElement(shadowDOM, 'style', {
           {
             add: 'markdown',
             value: 'Save the tab object to reopen it after a page unload.'
+          }
+        ],
+        typeDefinition: [
+          {
+            add: 'code',
+            value: ''
           }
         ]
       },
@@ -401,6 +523,12 @@ GM_addElement(shadowDOM, 'style', {
             add: 'markdown',
             value: 'Get all tab objects as a hash to communicate with other script instances.'
           }
+        ],
+        typeDefinition: [
+          {
+            add: 'code',
+            value: ''
+          }
         ]
       },
       {
@@ -411,6 +539,12 @@ GM_addElement(shadowDOM, 'style', {
           {
             add: 'markdown',
             value: 'Shows a HTML5 Desktop notification and/or highlight the current tab.'
+          }
+        ],
+        typeDefinition: [
+          {
+            add: 'code',
+            value: ''
           }
         ]
       },
@@ -423,6 +557,12 @@ GM_addElement(shadowDOM, 'style', {
             add: 'markdown',
             value: 'Sets data to system clipboard.'
           }
+        ],
+        typeDefinition: [
+          {
+            add: 'code',
+            value: ''
+          }
         ]
       },
       {
@@ -434,6 +574,12 @@ GM_addElement(shadowDOM, 'style', {
             add: 'markdown',
             value:
               "`GM_webRequest` (re-)registers rules for web request manipulations and the listener of triggered rules. If you need to just register rules it's better to use `@webRequest` header. Note, webRequest proceeds only requests with types `sub_frame`, `script`, `xhr` and `websocket`."
+          }
+        ],
+        typeDefinition: [
+          {
+            add: 'code',
+            value: ''
           }
         ]
       },
@@ -464,6 +610,12 @@ GM_addElement(shadowDOM, 'style', {
                 add: 'markdown',
                 value: 'Retrieve cookies.'
               }
+            ],
+            typeDefinition: [
+              {
+                add: 'code',
+                value: ''
+              }
             ]
           },
           {
@@ -476,6 +628,12 @@ GM_addElement(shadowDOM, 'style', {
                 value:
                   'Sets a cookie with the given details. Supported properties are defined [here](https://developer.chrome.com/extensions/cookies#method-set).'
               }
+            ],
+            typeDefinition: [
+              {
+                add: 'code',
+                value: ''
+              }
             ]
           },
           {
@@ -486,6 +644,12 @@ GM_addElement(shadowDOM, 'style', {
               {
                 add: 'markdown',
                 value: 'Deletes a cookie.'
+              }
+            ],
+            typeDefinition: [
+              {
+                add: 'code',
+                value: ''
               }
             ]
           }

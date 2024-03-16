@@ -42,6 +42,13 @@
     '
   )
 
-    GM.addElement
-    GM_info
+  GM.addElement
+  GM_info
+  GM_listValues
+  GM.setValue
+  GM_getValue()
+  GM.getResourceText
+  registerMenuCommand
+
+  GM_registerMenuCommand
 })()
