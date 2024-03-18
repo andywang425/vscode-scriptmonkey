@@ -441,7 +441,13 @@ GM_addElement(shadowDOM, 'style', {
         typeDefinition: [
           {
             add: 'code',
-            value: ''
+            value: `function GM_openInTab(
+  url: string,
+  options?:
+    | { active?: boolean; insert?: number; setParent?: boolean; incognito?: boolean }
+    | boolean
+): { close: () => void; onclose: () => void; closed: boolean }
+`
           }
         ]
       },
@@ -459,7 +465,47 @@ GM_addElement(shadowDOM, 'style', {
         typeDefinition: [
           {
             add: 'code',
-            value: ''
+            value: `function GM_xmlhttpRequest(details: {
+  method?: 'GET' | 'HEAD' | 'POST'
+  url: string | URL
+  headers?: Record<string, string>
+  data?: string | Blob | File | Record<string, any> | any[] | FormData | URLSearchParams
+  redirect?: 'follow' | 'error' | 'manual'
+  cookie?: string
+  binary?: boolean
+  nocache?: boolean
+  revalidate?: boolean
+  timeout?: number
+  context?: any
+  responseType?: 'arraybuffer' | 'blob' | 'json' | 'stream'
+  overrideMimeType?: string
+  anonymous?: boolean
+  fetch?: boolean
+  user?: string
+  password?: string
+  onabort?: (response: GMXmlHttpRequestResponse) => void
+  onerror?: (response: GMXmlHttpRequestResponse) => void
+  onloadstart?: (response: GMXmlHttpRequestResponse) => void
+  onprogress?: (response: GMXmlHttpRequestResponse) => void
+  onreadystatechange?: (response: GMXmlHttpRequestResponse) => void
+  ontimeout?: (response: GMXmlHttpRequestResponse) => void
+  onload?: (response: GMXmlHttpRequestResponse) => void
+}): {
+  abort: () => void
+}
+
+interface GMXmlHttpRequestResponse {
+  finalUrl: string
+  readyState: number
+  status: number
+  statusText: string
+  responseHeaders: string
+  response?: any
+  responseXML?: Document
+  responseText?: string
+  context?: any
+}
+`
           }
         ]
       },
@@ -476,7 +522,26 @@ GM_addElement(shadowDOM, 'style', {
         typeDefinition: [
           {
             add: 'code',
-            value: ''
+            value: `function GM_download(options: {
+  url: string
+  name: string
+  headers?: Record<string, string>
+  conflictAction?: 'uniquify' | 'overwrite' | 'prompt'
+  saveAs?: boolean
+  timeout?: number
+  onerror?: (error: string, details: string) => void
+  onload?: () => void
+  onprogress?: () => void
+  ontimeout?: () => void
+}): { abort: () => void }`
+          },
+          {
+            add: 'text',
+            value: '\n '
+          },
+          {
+            add: 'code',
+            value: `function GM_download(url: string, name: string): { abort: () => void }`
           }
         ]
       },
@@ -493,7 +558,7 @@ GM_addElement(shadowDOM, 'style', {
         typeDefinition: [
           {
             add: 'code',
-            value: ''
+            value: 'function GM_getTab(callback: (tab: any) => void): void'
           }
         ]
       },
@@ -510,7 +575,7 @@ GM_addElement(shadowDOM, 'style', {
         typeDefinition: [
           {
             add: 'code',
-            value: ''
+            value: 'function GM_saveTab(tab: any, callback?: (info: any) => void): any'
           }
         ]
       },
@@ -527,7 +592,7 @@ GM_addElement(shadowDOM, 'style', {
         typeDefinition: [
           {
             add: 'code',
-            value: ''
+            value: 'function GM_getTabs(callback?: (tabs: any[]) => void): any[]'
           }
         ]
       },
@@ -544,7 +609,19 @@ GM_addElement(shadowDOM, 'style', {
         typeDefinition: [
           {
             add: 'code',
-            value: ''
+            value: `function GM_notification(details: {
+  text: string
+  title?: string
+  tag?: any
+  image?: string
+  highlight?: boolean
+  silent?: boolean
+  timeout?: number
+  url?: string
+  onclick?: (event: any) => any
+  ondone?: () => any
+}): void
+`
           }
         ]
       },

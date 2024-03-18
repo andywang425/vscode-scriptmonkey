@@ -51,4 +51,8 @@
   registerMenuCommand
 
   GM_registerMenuCommand
+  GM_xmlhttpRequest
+  GM.xmlHttpRequest
+  GM_download
+  GM_getTabs
 })()
