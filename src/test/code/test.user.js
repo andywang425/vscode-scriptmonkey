@@ -55,4 +55,10 @@
   GM.xmlHttpRequest
   GM_download
   GM_getTabs
+    GM.setClipboard
+  GM_webRequest
+
+  GM_cookie.list
+  GM_cookie.delete
+  GM_cookie.set
 })()

@@ -632,13 +632,13 @@ interface GMXmlHttpRequestResponse {
         documentation: [
           {
             add: 'markdown',
-            value: 'Sets data to system clipboard.'
+            value: 'Sets the text of the clipboard to a specified value.'
           }
         ],
         typeDefinition: [
           {
             add: 'code',
-            value: ''
+            value: 'function GM_setClipboard(data: string, info?: string, callback?: () => void)'
           }
         ]
       },
@@ -656,7 +656,34 @@ interface GMXmlHttpRequestResponse {
         typeDefinition: [
           {
             add: 'code',
-            value: ''
+            value: `function GM_webRequest(
+  rules: {
+    selector:
+      | string
+      | {
+          include: string | string[]
+          match: string | string[]
+          exclude: string | string[]
+        }
+    action:
+      | string
+      | {
+          cancel: boolean
+          redirect:
+            | string
+            | {
+                from: string
+                to: string
+              }
+        }
+  }[],
+  listener: (
+    info: 'cancel' | 'redirect',
+    messageL: 'ok' | 'error',
+    details: { rule: any; url: string; redirect_url: string; description: string }
+  ) => void
+)
+`
           }
         ]
       },
@@ -691,7 +718,16 @@ interface GMXmlHttpRequestResponse {
             typeDefinition: [
               {
                 add: 'code',
-                value: ''
+                value: `function GM_cookie.list(
+  details: {
+    url?: string
+    domain?: string
+    name?: string
+    path?: string
+  },
+  callback?: (cookies: any[], error: string) => any[]
+)
+`
               }
             ]
           },
@@ -709,7 +745,21 @@ interface GMXmlHttpRequestResponse {
             typeDefinition: [
               {
                 add: 'code',
-                value: ''
+                value: `function GM_cookie.set(
+  details: {
+    url?: string
+    name: string
+    value: string
+    domain?: string
+    firstPartyDomain?: string
+    path?: string
+    secure?: boolean
+    httpOnly?: boolean
+    expirationDate?: number
+  },
+  callback?: (error?: string) => void
+)
+`
               }
             ]
           },
@@ -726,7 +776,15 @@ interface GMXmlHttpRequestResponse {
             typeDefinition: [
               {
                 add: 'code',
-                value: ''
+                value: `function GM_cookie.delete(
+  details: {
+    url?: string
+    name?: string
+    firstPartyDomain?: string
+  },
+  callback?: (error?: string) => void
+)
+`
               }
             ]
           }
