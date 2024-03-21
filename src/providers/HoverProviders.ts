@@ -18,7 +18,7 @@ function makeHoverObject(
   const wordAndPosition = getWord(document, position, isInWord)
   if (wordAndPosition) {
     let [word, next_position] = wordAndPosition
-    if (isInWord && word.startsWith('GM_')) {
+    if (word.startsWith('GM_')) {
       word = word.substring(3)
       // Compatible for GM.xmlHttpRequest and GM_xmlhttpRequest
       if (word === 'xmlhttpRequest') {
