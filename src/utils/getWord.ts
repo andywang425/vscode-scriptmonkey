@@ -40,10 +40,6 @@ function findNextPosition(
     return findNextPosition(document, new vscode.Position(line, 0), false)
   }
 
-  let temps = document
-    .getText(new vscode.Range(new vscode.Position(line, character), position))
-    .trim()
-
   if (
     document.getText(new vscode.Range(new vscode.Position(line, character), position)).trim() ===
     '.'
