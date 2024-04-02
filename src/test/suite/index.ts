@@ -4,6 +4,7 @@ import { globSync } from 'glob'
 
 export function run(): Promise<void> {
   // Create the mocha test
+  // @ts-ignore
   const mocha = new Mocha.default({
     ui: 'tdd',
     color: true
@@ -19,7 +20,7 @@ export function run(): Promise<void> {
 
     try {
       // Run the mocha test
-      mocha.run((failures) => {
+      mocha.run((failures: number) => {
         if (failures > 0) {
           e(new Error(`${failures} tests failed.`))
         } else {
