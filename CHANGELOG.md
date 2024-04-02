@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.1.0] - 2024/4/2
+
 ### Added
 
 - Support more matadata and GM APIs.
