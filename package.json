@@ -3,7 +3,7 @@
 	"displayName": "Scriptmonkey",
 	"description": "Userscript language support for vscode.",
 	"icon": "images/icon.png",
-	"version": "0.0.8",
+	"version": "0.1.0",
 	"repository": "https://github.com/andywang425/vscode-scriptmonkey",
 	"publisher": "andywang",
 	"engines": {
