@@ -11,13 +11,17 @@
 // @grant        none
 // ==/UserScript==
 
-(function () {
-    'use strict';
+;(function () {
+  'use strict'
 
-    GM_addStyle("body { color: white; background-color: black } img { border: 0, background-color: white }");
-    GM_addStyle('body { color: white; background-color: black } img { border: 0, background-color: white }');
+  GM_addStyle(
+    'body { color: white; background-color: black } img { border: 0, background-color: white }'
+  )
+  GM_addStyle(
+    'body { color: white; background-color: black } img { border: 0, background-color: white }'
+  )
 
-    GM_addStyle(`
+  GM_addStyle(`
     .emoji-barrage .full-screen[data-v-68506677] {
         position: fixed;
         left: 0;
@@ -26,13 +30,15 @@
         height: 100%;
         z-index: 1001;
         overflow: hidden
-    }`);
+    }`)
 
-    //css-end
-    alert();
-    function test(a) {
-        console.log(a)
-    }
-    test("123\
-    ");
-})();
+  //css-end
+  alert()
+  function test(a) {
+    console.log(a)
+  }
+  test(
+    '123\
+    '
+  )
+})()

@@ -8,14 +8,21 @@
 // @include      /121^$/
 // @match        *://*/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
-// @grant        none
+// @grant GM_xmlhttpRequest
+// @grant GM.xmlHttpRequest
+// @grant GM_xmlHttpRequest
+// @grant GM_xmlhttpRequest
 // ==/UserScript==
 
-(function () {
-    'use strict';
-    GM_addStyle("body { color: white; background-color: black } img { border: 0, background-color: white }");
-    GM_addStyle('body { color: white; background-color: black } img { border: 0, background-color: white }');
-    GM_addStyle(`
+;(function () {
+  'use strict'
+  GM_addStyle(
+    'body { color: white; background-color: black } img { border: 0, background-color: white }'
+  )
+  GM_addStyle(
+    'body { color: white; background-color: black } img { border: 0, background-color: white }'
+  )
+  GM_addStyle(`
     .emoji-barrage .full-screen[data-v-68506677] {
         position: fixed;
         left: 0;
@@ -24,14 +31,34 @@
         height: 100%;
         z-index: 1001;
         overflow: hidden
-    }`);
+    }`)
+  //css-end
+  alert()
+  function test(a) {
+    console.log(a)
+  }
+  test(
+    '123\
+    '
+  )
 
+  GM.addElement
+  GM_info
+  GM_listValues
+  GM.setValue
+  GM_getValue()
+  GM.getResourceText
+  registerMenuCommand
 
-    //css-end
-    alert();
-    function test(a) {
-        console.log(a)
-    }
-    test("123\
-    ");
-})();
+  GM_registerMenuCommand
+  GM_xmlhttpRequest
+  GM.xmlHttpRequest
+  GM_download
+  GM_getTabs
+    GM.setClipboard
+  GM_webRequest
+
+  GM_cookie.list
+  GM_cookie.delete
+  GM_cookie.set
+})()

@@ -33,7 +33,7 @@
                     "name": "entity.name.function.js"
                 },
                 "2": {
-                    "name": "meta.brace.round.js" 
+                    "name": "meta.brace.round.js"
                 }
             },
             "endCaptures": {
@@ -151,6 +151,25 @@
                     }
                 },
                 {
+                    "match": "^//\\s*(@webRequest)\\s+(.*)",
+                    "captures": {
+                        "0": {
+                            "name": "comment.block.documentation.js"
+                        },
+                        "1": {
+                            "name": "storage.type.class.jsdoc"
+                        },
+                        "2": {
+                            "name": "variable.other.jsdoc",
+                            "patterns": [
+                                {
+                                    "include": "source.json"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
                     "match": "^//\\s*(@grant)\\s+(.*)",
                     "captures": {
                         "0": {
@@ -163,7 +182,7 @@
                             "name": "variable.other.jsdoc",
                             "patterns": [
                                 {
-                                    "match": "\\b(?:none|unsafeWindow|window\\.close|window\\.focus|window\\.onurlchange|GM[_\\.]addStyle|GM[_\\.]addElement|GM[_\\.]deleteValue|GM[_\\.]listValues|GM_addValueChangeListener|GM_removeValueChangeListener|GM[_\\.]setValue|GM[_\\.]getValue|GM_log|GM_getResourceText|GM_getResourceURL|GM\\.getResourceUrl|GM[_\\.]registerMenuCommand|GM_unregisterMenuCommand|GM[_\\.]openInTab|GM_xmlhttpRequest|GM\\.xmlHttpRequest|GM_download|GM_getTab|GM_saveTab|GM_getTabs|GM[_\\.]notification|GM[_\\.]setClipboard|GM[_\\.]info)\\s*$",
+                                    "match": "\\b(?:none|unsafeWindow|window.onurlchange|window.close|window.focus|GM[_\\.]addElement|GM[_\\.]addStyle|GM[_\\.]download|GM[_\\.]getResourceText|GM[_\\.]getResourceURL|GM[_\\.]info|GM[_\\.]log|GM[_\\.]notification|GM[_\\.]openInTab|GM[_\\.]registerMenuCommand|GM[_\\.]unregisterMenuCommand|GM[_\\.]setClipboard|GM[_\\.]getTab|GM[_\\.]saveTab|GM[_\\.]getTabs|GM[_\\.]setValue|GM[_\\.]getValue|GM[_\\.]deleteValue|GM[_\\.]listValues|GM[_\\.]addValueChangeListener|GM[_\\.]removeValueChangeListener|GM_xmlhttpRequest|GM\\.xmlHttpRequest|GM[_\\.]webRequest|GM[_\\.]cookie|)\\s*$",
                                     "name": "constant.language.symbol-type.jsdoc"
                                 }
                             ]
@@ -184,6 +203,26 @@
                             "patterns": [
                                 {
                                     "match": "\\b(?:document-start|document-body|document-end|document-idle|context-menu)\\s*$",
+                                    "name": "constant.language.symbol-type.jsdoc"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "match": "^//\\s*(@sandbox)\\s+(.*)",
+                    "captures": {
+                        "0": {
+                            "name": "comment.block.documentation.js"
+                        },
+                        "1": {
+                            "name": "storage.type.class.jsdoc"
+                        },
+                        "2": {
+                            "name": "comment.block.documentation.js",
+                            "patterns": [
+                                {
+                                    "match": "\\b(?:raw|JavaScript|DOM)\\s*$",
                                     "name": "constant.language.symbol-type.jsdoc"
                                 }
                             ]
